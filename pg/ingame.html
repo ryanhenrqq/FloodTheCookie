@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/res/fav/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../src/styles/game.css">
+    <title>Flood the Cookie!</title>
+</head>
+<body>
+    <header>
+        <div class="left-head">
+            <h1 id="logo-button">Flood the Cookie!</h1>
+        </div>
+        <div class="right-head">
+            <b class="bold-head">Points: </b>
+            <div class="bold-head" id="pointsSpan">0</div>
+        </div>
+    </header>
+    <main>
+        <img src="../src/res/fav/favicon.png" alt="Cookie" id="cookie">
+        <div class="cont">
+            <button id="mult1-btn" onclick="multiplier1()"></button>
+            <button disabled id="auto1-btn" onclick="automatize1()"></button>
+        </div>
+        <div class="hor-flex">
+            <div class="infos" id="multiplier-info">Multiplier x1</div>
+            <div class="infos" id="auto-multiplier-info">Not Automatizated</div>
+        </div>
+        
+        
+    </main>
+    <footer><i style="color: white;">("Flood the Cookie" é uma inspiração simplificada de <a href="https://store.steampowered.com/app/1454400/Cookie_Clicker/">Cookie Clicker</a> disponível na Steam, sem intenção nenhuma de lucro)</i></footer>
+    
+    
+
+    <script>
+        document.getElementById("logo-button").addEventListener("click", function(){
+            if (confirm("Deseja voltar para o início? Irá perder todo o progresso atual!")){
+                window.location.href = "../index.html"
+            } else {
+                return null
+            }
+        })
+    </script>
+    <script src="../src/script/ingame.js"></script>
+</body>
+</html>
