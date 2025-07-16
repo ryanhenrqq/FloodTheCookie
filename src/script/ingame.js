@@ -50,6 +50,17 @@ function multiplier1() {
     multiplier1.disabled = true
     multiplier1.textContent = multiplier1txt + ` (Min. ${minimum1Points} Points)`
     multInfoText.textContent = `Multiplier x${multiplier}`
+
+    if (points > minimum1Points) {
+        multiplier1.disabled = false
+    } else {
+        multiplier1.disabled = true
+    }
+    if (points > minimumAuto1Points) {
+        automatize1.disabled = false
+    } else {
+        automatize1.disabled = true
+    }
 }
 
 function automatize1() {
@@ -68,6 +79,17 @@ function automatize1() {
     automatize1.disabled = true
     automatize1.textContent = automatize1txt + ` (Min. ${minimumAuto1Points} Points)`
     automultInfoText.textContent = `Automatized x${autoMultiplier}cp/s`
+
+    if (points > minimum1Points) {
+        multiplier1.disabled = false
+    } else {
+        multiplier1.disabled = true
+    }
+    if (points > minimumAuto1Points) {
+        automatize1.disabled = false
+    } else {
+        automatize1.disabled = true
+    }
 }
 
 function automatizedClicks() {
