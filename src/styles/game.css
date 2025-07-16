@@ -25,6 +25,22 @@ header {
     position: fixed;
 }
 
+.left-head {
+    display: flex;
+    flex-direction: row;
+}
+.left-head img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    filter: invert(100);
+}
+.left-head img:hover {
+    cursor: pointer;
+}
 .left-head h1{
     font-size: 50px;
     color: white;
@@ -37,6 +53,11 @@ header {
     flex-direction: row;
 }
 
+#pointsSpan {
+    margin-left: 15px;
+    letter-spacing: 1.8px;
+}
+
 .bold-head {
     color: white;
     font-size: 45px;
@@ -45,7 +66,11 @@ header {
 
 
 main {
-    padding-top: 5rem;
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .cont {
@@ -59,9 +84,11 @@ main {
 }
 
 #cookie{
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
     transition: transform 0.2s linear;
+    animation: spiiin 16s linear infinite;
 }
 #cookie:hover {
     cursor: pointer;
@@ -88,9 +115,6 @@ main {
 }
 
 footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 14px;
     position: fixed;
     bottom: 0;
@@ -99,4 +123,82 @@ footer{
 
 footer a{
     color: #358dff;
+}
+
+.popup {
+    width: 18rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 40%;
+    right: 45%;
+    top: 40vh;
+    padding: 20px;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 3px 3px 5px black;
+}
+.popup b{
+    font-size: 16px;
+    padding: 6px;
+}
+.popup button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    font-size: 19px;
+    background-color: #303030;
+    color: white;
+    border: none;
+    border-radius: 18px;
+    margin: 8px;
+    box-shadow: 3px 3px 6px black;
+    transition: transform 0.2s linear;
+}
+.popup button:hover {
+    cursor: pointer;
+}
+.popup button:active {
+    transform: scale(1.03);
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    filter: opacity(0);
+    pointer-events: none;
+}
+
+.side-small-btn {
+    margin-right: 10px;
+    filter: invert(100);
+    width: 40px;
+    height: 40px;
+}
+
+#effectMouse {
+    display: none;
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    background-color: #ffffff3a;
+    z-index: 99;
+    animation: spiiin 4s linear infiinite;
+}
+#effectMouse img{
+    width: 6px;
+    height: 6px;
+}
+
+@keyframes spiiin {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(359deg);
+    }
 }

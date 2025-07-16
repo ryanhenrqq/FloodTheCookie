@@ -20,15 +20,17 @@ document.addEventListener("DOMContentLoaded", function() {
     automatize1.disabled = true
     automatize1.textContent = automatize1txt + ` (Min. ${minimumAuto1Points} Points)`
 })
-
-cookie.addEventListener("click", function(){
+document.addEventListener("mousedown", (e) =>{
+    const cookieFx = document.getElementById("effectMouse")
+    const msx = e.clientX
+    const msy = e.clientY
+    cookieFx.style.transform = `translate(${msx}px, ${msy}px)`
+})
+cookie.addEventListener("click", function(e){
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")
-
     points = points + multiplier
-
     pointsText.textContent = points
-
     if (points > minimum1Points) {
         multiplier1.disabled = false
     }
@@ -36,7 +38,6 @@ cookie.addEventListener("click", function(){
         automatize1.disabled = false
     }
 })
-
 function multiplier1() {
     const multiplier1 = document.getElementById("mult1-btn")
     const multiplier1txt = "Multiplier x2"
@@ -51,7 +52,6 @@ function multiplier1() {
     multiplier1.textContent = multiplier1txt + ` (Min. ${minimum1Points} Points)`
     multInfoText.textContent = `Multiplier x${multiplier}`
 }
-
 function automatize1() {
     const automatize1 = document.getElementById("auto1-btn")
     const automatize1txt = "Automatize x2 cp/s"
@@ -69,17 +69,15 @@ function automatize1() {
     automatize1.textContent = automatize1txt + ` (Min. ${minimumAuto1Points} Points)`
     automultInfoText.textContent = `Automatized x${autoMultiplier}cp/s`
 }
-
 function automatizedClicks() {
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")
-
     if (autoMultiplier == 0) {
         return
     } else {
-        points = points + autoMultiplier
+        points = points + (autoMultiplier/2)
         pointsText.textContent = points
-
+        audioCracking()
         if (points > minimum1Points) {
             multiplier1.disabled = false
         } else {
@@ -92,7 +90,6 @@ function automatizedClicks() {
         }
     }
 }
-
 function blockBtnDoubleCLick() {
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")
@@ -108,6 +105,5 @@ function blockBtnDoubleCLick() {
         automatize1.disabled = true
     }
 }
-
-setInterval(automatizedClicks, 1000)
+setInterval(automatizedClicks, 500)
 setInterval(blockBtnDoubleCLick, 50)

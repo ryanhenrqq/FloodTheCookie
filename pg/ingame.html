@@ -8,41 +8,40 @@
     <title>Flood the Cookie!</title>
 </head>
 <body>
-    <header>
-        <div class="left-head">
-            <h1 id="logo-button">Flood the Cookie!</h1>
-        </div>
-        <div class="right-head">
-            <b class="bold-head">Points: </b>
-            <div class="bold-head" id="pointsSpan">0</div>
-        </div>
-    </header>
-    <main>
-        <img src="../src/res/fav/favicon.png" alt="Cookie" id="cookie">
-        <div class="cont">
-            <button id="mult1-btn" onclick="multiplier1()"></button>
-            <button disabled id="auto1-btn" onclick="automatize1()"></button>
-        </div>
-        <div class="hor-flex">
-            <div class="infos" id="multiplier-info">Multiplier x1</div>
-            <div class="infos" id="auto-multiplier-info">Not Automatizated</div>
-        </div>
-        
-        
-    </main>
-    <footer><i style="color: white;">("Flood the Cookie" é uma inspiração simplificada de <a href="https://store.steampowered.com/app/1454400/Cookie_Clicker/">Cookie Clicker</a> disponível na Steam, sem intenção nenhuma de lucro)</i></footer>
-    
-    
-
-    <script>
-        document.getElementById("logo-button").addEventListener("click", function(){
-            if (confirm("Deseja voltar para o início? Irá perder todo o progresso atual!")){
-                window.location.href = "../index.html"
-            } else {
-                return null
-            }
-        })
-    </script>
+    <div class="content" id="body-blur">
+        <header>
+            <div class="left-head" id="logo-button">
+                <img src="../src/res/ico/menu.svg" alt="Seta Para Trás" id="back-menu">
+                <h1>Flood the Cookie!</h1>
+            </div>s
+            <div class="right-head">
+                <b class="bold-head">Points: </b>
+                <div class="bold-head" id="pointsSpan">0</div>
+            </div>
+        </header>
+        <main>
+            <img src="../src/res/fav/favicon.png" alt="Cookie" id="cookie">
+            <div class="cont">
+                <button id="mult1-btn" onclick="multiplier1()"></button>
+                <button disabled id="auto1-btn" onclick="automatize1()"></button>
+            </div>
+            <div class="hor-flex">
+                <div class="infos" id="multiplier-info">Multiplier x1</div>
+                <div class="infos" id="auto-multiplier-info">Not Automatizated</div>
+            </div>
+        </main>
+        <footer><i style="color: white;">("Flood the Cookie" é uma inspiração simplificada de <a href="https://store.steampowered.com/app/1454400/Cookie_Clicker/">Cookie Clicker</a> disponível na Steam, sem intenção nenhuma de lucro)</i></footer>
+    </div>
+    <div class="popup" id="popup-pause">
+        <b>Menu - Flood The Cookie!</b> 
+        <button id="start-btn"><img src="../src/res/ico/play.svg" alt="Play" class="side-small-btn">Iniciar</button>
+        <button id="restart-btn"><img src="../src/res/ico/restart.svg" alt="Restart" class="side-small-btn">Reiniciar</button>
+        <button id="exit-btn"><img src="../src/res/ico/exit.svg" alt="" class="side-small-btn">Sair</button>
+        <b>GitHub: ryanhenrqq</b> 
+    </div>
+    <div id="effectMouse"><img src="../src/res/fav/favicon.png" alt="Cookie Effect"></div>
+    <script src="../src/script/audio.js"></script>
     <script src="../src/script/ingame.js"></script>
+    <script src="../src/script/pause-menu.js"></script>
 </body>
 </html>
