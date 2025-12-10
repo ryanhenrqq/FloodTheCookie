@@ -9,17 +9,12 @@
 </head>
 <body>
     <div class="cont">
-        <h1>Flood the Cookie!</h1>
+        <h1 id="alert-title">Flood the Cookie!</h1>
         <img src="./src/res/fav/favicon.png" alt="Cookie" class="cookie">
         <button onclick="start()"> <img src="./src/res/ico/play.svg" alt="Play" class="side-small-btn">Start New Game</button>
-        <button disabled> <img src="./src/res/ico/exit.svg" alt="Continue" class="side-small-btn">Continue</button>
+        <button onclick="continueGm()"> <img src="./src/res/ico/exit.svg" alt="Continue" class="side-small-btn">Continue</button>
     </div>
     <footer><i style="color: white;">("Flood the Cookie" é uma inspiração simplificada de <a href="https://store.steampowered.com/app/1454400/Cookie_Clicker/">Cookie Clicker</a> disponível na Steam, sem intenção nenhuma de lucro)</i></footer>
-
-    <script>
-        function start(){
-            window.location.href = "./pg/ingame.html"  
-        }
-    </script>
+    <script src="./src/script/main-menu.js"></script>
 </body>
 </html>

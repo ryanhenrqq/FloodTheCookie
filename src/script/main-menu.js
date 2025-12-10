@@ -1,0 +1,17 @@
+document.addEventListener("DOMContentLoaded", function() {
+    returnNormalTitle()
+})
+function start(){
+    window.location.href = "./pg/ingame.html"  
+}
+function continueGm() {
+    const alerter = document.getElementById("alert-title")
+    alerter.textContent = "Não há nenhum jogo salvo!"
+    alerter.style.color = "red"
+    setTimeout(returnNormalTitle, 3000)
+}
+function returnNormalTitle() {
+    const alerter = document.getElementById("alert-title")
+    alerter.textContent = "FloodTheCookie"
+    alerter.style.color = "black"
+}
