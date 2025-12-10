@@ -6,7 +6,7 @@ function start(){
 }
 function continueGm() {
     const alerter = document.getElementById("alert-title")
-    alerter.textContent = "Não há nenhum jogo salvo!"
+    alerter.textContent = "Não há jogo salvo!"
     alerter.style.color = "red"
     setTimeout(returnNormalTitle, 3000)
 }
