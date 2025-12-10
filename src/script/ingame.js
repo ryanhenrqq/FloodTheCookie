@@ -12,13 +12,13 @@ let minimumAuto1Points = 80
 document.addEventListener("DOMContentLoaded", function() {
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")
-    const multiplier1txt = "Multiplier x2"
-    const automatize1txt = "Automatize 2cp/s"
+    const multiplier1txt = "Multiplicador x2"
+    const automatize1txt = "Automatizar 2cp/s"
 
     multiplier1.disabled = true
-    multiplier1.textContent = multiplier1txt + ` (Min. ${minimum1Points} Points)`
+    multiplier1.textContent = multiplier1txt + ` (Min. ${minimum1Points} Pontos)`
     automatize1.disabled = true
-    automatize1.textContent = automatize1txt + ` (Min. ${minimumAuto1Points} Points)`
+    automatize1.textContent = automatize1txt + ` (Min. ${minimumAuto1Points} Pontos)`
 })
 document.addEventListener("mousedown", (e) =>{
     const cookieFx = document.getElementById("effectMouse")
@@ -40,7 +40,7 @@ cookie.addEventListener("click", function(e){
 })
 function multiplier1() {
     const multiplier1 = document.getElementById("mult1-btn")
-    const multiplier1txt = "Multiplier x2"
+    const multiplier1txt = "Multiplicador x2"
 
     points = points - minimum1Points
     multiplier = multiplier + multiplier
@@ -49,12 +49,12 @@ function multiplier1() {
     pointsText.textContent = points
     
     multiplier1.disabled = true
-    multiplier1.textContent = multiplier1txt + ` (Min. ${minimum1Points} Points)`
-    multInfoText.textContent = `Multiplier x${multiplier}`
+    multiplier1.textContent = multiplier1txt + ` (Min. ${minimum1Points} Pontos)`
+    multInfoText.textContent = `Multiplicador x${multiplier}`
 }
 function automatize1() {
     const automatize1 = document.getElementById("auto1-btn")
-    const automatize1txt = "Automatize x2 cp/s"
+    const automatize1txt = "Automatizar x2 cp/s"
 
     points = points - minimumAuto1Points
     if (autoMultiplier == 0){
@@ -66,8 +66,8 @@ function automatize1() {
     pointsText.textContent = points
 
     automatize1.disabled = true
-    automatize1.textContent = automatize1txt + ` (Min. ${minimumAuto1Points} Points)`
-    automultInfoText.textContent = `Automatized x${autoMultiplier}cp/s`
+    automatize1.textContent = automatize1txt + ` (Min. ${minimumAuto1Points} Pontos)`
+    automultInfoText.textContent = `Automatizado x${autoMultiplier}cp/s`
 }
 function automatizedClicks() {
     const multiplier1 = document.getElementById("mult1-btn")
