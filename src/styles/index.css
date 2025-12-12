@@ -23,7 +23,7 @@ body {
     padding: 40px;
     border-radius: 20px;
     width: 50%;
-    background-color: #ffffff;
+    background-color: #ffffffb5;
 }
 
 #alert-title {
@@ -34,10 +34,20 @@ body {
     width: 80%;
 }
 
+.cookie-parent {
+    animation: spiiin 40s linear infinite;
+}
 .cookie{
     width: 300px;
     height: 300px;
     object-fit: cover;
+    transition: transform 0.2s ease;
+}
+.cookie:hover {
+    transform: scale(1.02);
+}
+.cookie:active {
+    transform: scale(1.1);
 }
 
 .flex-hor {
@@ -59,11 +69,14 @@ body {
     border: none;
     border-radius: 13px;
     box-shadow: 2px 2px 6px black;
-    transition: box-shadow 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s linear;
 }
 .cont button:hover{
-    box-shadow: 4px 4px 6px black;
     cursor: pointer;
+}
+.cont button:active {
+    background-color: #808080;
+    transform: scale(1.1);
 }
 
 footer{
@@ -85,6 +98,14 @@ footer a{
     filter: invert(100);
     width: 40px;
     height: 40px;
+}
+
+@keyframes spiiin {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(359deg);
+    }
 }
 
 @media (max-width: 768px) {
