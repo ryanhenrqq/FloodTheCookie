@@ -2,10 +2,15 @@ document.addEventListener("DOMContentLoaded", function() {
     returnNormalTitle()
 })
 function start(){
+    if (navigator.vibrate) {
+        navigator.vibrate(80)
+    }
     window.location.replace("./pg/ingame.html")  
 }
 function continueGm() {
-    navigator.vibrate(200)
+    if (navigator.vibrate) {
+        navigator.vibrate(400)
+    }
     const alerter = document.getElementById("alert-title")
     alerter.textContent = "Não há jogo salvo!"
     alerter.style.color = "red"
