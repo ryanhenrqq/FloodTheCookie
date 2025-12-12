@@ -9,6 +9,9 @@ let minimum1Points = 30
 let autoMultiplier = 0
 let minimumAuto1Points = 80
 
+let uptime = 0
+let clickpersecs = 0
+
 document.addEventListener("DOMContentLoaded", function() {
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")
@@ -20,6 +23,20 @@ document.addEventListener("DOMContentLoaded", function() {
     automatize1.disabled = true
     automatize1.textContent = automatize1txt + ` (Min. ${minimumAuto1Points} Pontos)`
 })
+
+function uptimeSetter() {
+    const elementTime = document.getElementById("uptime")
+    uptime = uptime + 1
+    let textShown = ""
+    if (uptime < 60) {
+        textShown = `Jogando por ${uptime} Segundos`
+        elementTime.textContent = textShown
+    } else {
+        textShown = `Jogando por ${Math.trunc(Number(uptime)/60)} Minutos`
+        elementTime.textContent = textShown
+    }
+}
+
 document.addEventListener("mousedown", (e) =>{
     const cookieFx = document.getElementById("effectMouse")
     const msx = e.clientX
@@ -107,3 +124,4 @@ function blockBtnDoubleCLick() {
 }
 setInterval(automatizedClicks, 500)
 setInterval(blockBtnDoubleCLick, 50)
+setInterval(uptimeSetter, 1000)

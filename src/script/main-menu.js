@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-    navigator.vibrate(200)
     returnNormalTitle()
 })
 function start(){
-    navigator.vibrate(200)
     window.location.href = "./pg/ingame.html"  
 }
 function continueGm() {

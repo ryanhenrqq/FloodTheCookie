@@ -28,6 +28,8 @@ header {
 .left-head {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .left-head img{
     display: flex;
@@ -41,6 +43,10 @@ header {
 .left-head img:hover {
     cursor: pointer;
 }
+.left-head img:hover:active {
+    filter: invert(100);
+    transform: scale(0.90);
+}
 .left-head h1{
     font-size: 50px;
     color: white;
@@ -51,6 +57,9 @@ header {
 .right-head {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
 }
 
 #pointsSpan {
@@ -60,7 +69,6 @@ header {
 
 .bold-head {
     color: white;
-    font-size: 45px;
     font-weight: bold;
 }
 
@@ -106,6 +114,7 @@ main {
     border-radius: 50%;
     transition: transform 0.2s linear;
     animation: spiiin 16s linear infinite;
+    -webkit-tap-highlight-color: transparent;
 }
 #cookie:hover {
     cursor: pointer;
