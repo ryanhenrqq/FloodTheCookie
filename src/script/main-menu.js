@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     returnNormalTitle()
 })
 function start(){
-    window.location.href = "./pg/ingame.html"  
+    window.location.replace("./pg/ingame.html")  
 }
 function continueGm() {
     navigator.vibrate(200)
