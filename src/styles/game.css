@@ -146,7 +146,7 @@ main {
 }
 
 .infos {
-    font-size: 30px;
+    font-size: 21px;
     font-weight: bolder;
     color: rgb(53, 53, 53);
 }
@@ -276,7 +276,7 @@ footer a{
         position: fixed;
         right: auto;
         top: auto;
-        bottom: 22px;
+        bottom: 45px;
     }
     .infos {
         font-size: 23px;
