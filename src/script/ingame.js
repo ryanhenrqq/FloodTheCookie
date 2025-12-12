@@ -45,7 +45,7 @@ document.addEventListener("mousedown", (e) =>{
 })
 cookie.addEventListener("click", function(e){
     if (navigator.vibrate) {
-        navigator.vibrate(80)
+        navigator.vibrate(50)
     }
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")

@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 function start(){
     if (navigator.vibrate) {
-        navigator.vibrate(80)
+        navigator.vibrate(50)
     }
     window.location.replace("./pg/ingame.html")  
 }
 function continueGm() {
     if (navigator.vibrate) {
-        navigator.vibrate(400)
+        navigator.vibrate(500)
     }
     const alerter = document.getElementById("alert-title")
     alerter.textContent = "Não há jogo salvo!"
