@@ -20,9 +20,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 1%;
     border-radius: 20px;
-    width: 50%;
+    width: 30%;
     background-color: #ffffffb5;
 }
 
@@ -35,12 +35,14 @@ body {
 }
 
 .cookie-parent {
-    animation: spiiin 40s linear infinite;
-}
-.cookie{
     width: 300px;
     height: 300px;
     object-fit: cover;
+    animation: spiiin 40s linear infinite;
+}
+.cookie{
+    width: 100%;
+    height: 100%;
     transition: transform 0.2s ease;
 }
 .cookie:hover {
@@ -118,7 +120,7 @@ footer a{
         text-overflow: ellipsis;
         font-size: 28px;
     }
-    .cookie {
+    .cookie-parent {
         width: 40%;
         height: 40%;
     }
@@ -130,7 +132,7 @@ footer a{
         padding: 18px;
     }
 }
-@media (max-width: 384px) {
+@media (max-width: 484px) {
     .cont {
         width: 100%;
         height: 100%;
