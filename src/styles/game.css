@@ -88,7 +88,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 4%;
     border-radius: 20px;
     background-color: #ffffff;
 }
@@ -96,6 +96,16 @@ main {
     display: flex;
     flex-direction: column;
     gap: 14px;
+}
+
+.cont-buttons {
+    border: none;
+    margin: 8px;
+    font-size: 13px;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 18px;
+    background-color: #b6b6b6;
 }
 
 .aside-bar {
@@ -126,12 +136,6 @@ main {
 }
 .main-cookie:active {
     transform: scale(1.1);
-}
-
-.cont .flex-ver button{
-    margin: 8px;
-    font-size: 16px;
-    padding: 10px;
 }
 
 .hor-flex {
