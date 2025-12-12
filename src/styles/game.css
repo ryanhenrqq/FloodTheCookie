@@ -108,19 +108,20 @@ main {
     right: 24px;
 }
 
-#cookie{
+.main-cookie{
     width: 40%;
     height: 35%;
     border-radius: 50%;
-    transition: transform 0.2s linear;
-    animation: spiiin 16s linear infinite;
+    transition: transform 0.1s ease;
+    object-fit: cover;
+    animation: spiiin 18s linear infinite;
     -webkit-tap-highlight-color: transparent;
 }
-#cookie:hover {
+.main-cookie:hover {
     cursor: pointer;
 }
-#cookie:active {
-    transform: scale(1.03);
+.main-cookie:active {
+    transform: scale(1.1);
 }
 
 .cont button{
@@ -252,7 +253,7 @@ footer a{
     main {
         flex-direction: column;
     }
-    #cookie {
+    .main-cookie {
         width: 40%;
         height: 55%;
     }
@@ -268,7 +269,7 @@ footer a{
     }
 }
 @media (max-width: 540px) {
-    #cookie {
+    .main-cookie {
         width: 60%;
         height: 60%;
     }

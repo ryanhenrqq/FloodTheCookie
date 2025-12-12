@@ -44,6 +44,7 @@ document.addEventListener("mousedown", (e) =>{
     cookieFx.style.transform = `translate(${msx}px, ${msy}px)`
 })
 cookie.addEventListener("click", function(e){
+    navigator.vibrate(100)
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")
     points = points + multiplier
