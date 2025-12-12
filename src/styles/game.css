@@ -128,7 +128,7 @@ main {
     transform: scale(1.1);
 }
 
-.cont button{
+.cont .flex-ver button{
     margin: 8px;
     font-size: 16px;
     padding: 10px;
@@ -138,11 +138,17 @@ main {
     display: flex;
     flex-direction: row;
 }
+.flex-ver {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .infos {
     font-size: 30px;
     font-weight: bolder;
-    color: white;
+    color: rgb(53, 53, 53);
 }
 
 footer{
@@ -249,6 +255,10 @@ footer a{
     }
 }
 @media (max-width: 768px) {
+    .right-head {
+        font-size: 34px;
+        margin-left: 12px;
+    }
     .popup {
         left: 15%;
         right: 15%;
@@ -273,6 +283,10 @@ footer a{
     }
 }
 @media (max-width: 540px) {
+    .right-head {
+        font-size: 26px;
+        margin-left: 14px;
+    }
     .cookie-parent {
         width: 60%;
         height: 60%;
