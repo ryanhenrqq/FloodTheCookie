@@ -79,6 +79,7 @@ header {
 #pointsSpan {
     margin-left: 15px;
     letter-spacing: 1.8px;
+    transition: color 0.4s ease;
 }
 
 .bold-head {
@@ -103,6 +104,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     padding: 4%;
     border-radius: 20px;
     background-color: #ffffff6b;
@@ -139,7 +141,7 @@ main {
     justify-content: center;
     position: absolute;
     gap: 24px;
-    right: 24px;
+    right: 42px;
 }
 
 .cookie-parent {
@@ -173,6 +175,12 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.cont-titles {
+    font-size: 36px;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);  
 }
 
 .infos {

@@ -15,7 +15,7 @@
                 <img src="../src/res/ico/pause.png" alt="Seta Para Trás" id="back-menu">
                 <h1>Flood the Cookie!</h1>
             </div>
-            <div class="right-head">
+            <div class="right-head" id="all-right-span">
                 <div class="bold-head" id="pointsSpan">0</div>
                 <b class="bold-head">Cookies</b>
             </div>
@@ -27,10 +27,14 @@
             
             <div class="aside-bar">
                 <div class="cont">
+                    <h3 class="cont-titles">Impulsionadores</h3>
                     <div class="flex-ver">
                         <button id="mult1-btn" onclick="multiplier1()" class="cont-buttons"></button>
                         <div class="infos" id="multiplier-info">Multiplicador x1</div>
                     </div>
+                </div>
+                <div class="industries-cont cont" id="industries-cont">
+                    <h3 class="cont-titles">Fabricas</h3>
                     <div class="flex-ver">
                         <button disabled id="auto1-btn" onclick="automatize1()" class="cont-buttons"></button>
                         <div class="infos" id="auto-multiplier-info">Não Automatizado</div>

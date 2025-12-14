@@ -2,15 +2,31 @@ const cookie = document.getElementById("cookie")
 const pointsText = document.getElementById("pointsSpan")
 const multInfoText = document.getElementById("multiplier-info")
 const automultInfoText = document.getElementById("auto-multiplier-info")
+const industriesCont = document.getElementById("industries-cont")
+const rightHeadSpan = document.getElementById("all-right-span")
 
 let points = 0
 let multiplier = 1
-let minimum1Points = 30
+let minimum1Points = 70
 let autoMultiplier = 0
-let minimumAuto1Points = 80
+let minimumAuto1Points = 250
+let greenWaitTimer = 0
 
 let uptime = 0
 let clickpersecs = 0
+
+function makePointsRed(milisecs) {
+    increaseGreenWaiter(Number(milisecs) * 1.5)
+    pointsText.style.color = "red"
+    setTimeout(normalizePointColor, milisecs)
+}
+function makePointsGreen(milisecs) {
+    pointsText.style.color = "#72ee82"
+    setTimeout(normalizePointColor, milisecs)
+}
+function normalizePointColor() {
+    pointsText.style.color = "white"
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     const multiplier1 = document.getElementById("mult1-btn")
@@ -69,6 +85,7 @@ cookie.addEventListener("click", function(e){
     if (navigator.vibrate) {
         navigator.vibrate(50)
     }
+    makePointsGreen(250)
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")
     points = points + multiplier
@@ -106,12 +123,13 @@ function multiplier1() {
         navigator.vibrate(700)
     }
     audioHit()
+    makePointsRed(250)
     const multiplier1 = document.getElementById("mult1-btn")
     const multiplier1txt = "Multiplicador x2"
 
     points = points - minimum1Points
     multiplier = multiplier + multiplier
-    minimum1Points = Math.round(minimum1Points * 2.1)
+    minimum1Points = Math.round(minimum1Points * 1.9)
 
     pointsText.textContent = points
     
@@ -124,6 +142,7 @@ function automatize1() {
         navigator.vibrate(700)
     }
     audioHit()
+    makePointsRed(250)
     const automatize1 = document.getElementById("auto1-btn")
     const automatize1txt = "Automatizar x2 cp/s"
 
@@ -131,22 +150,27 @@ function automatize1() {
     if (autoMultiplier == 0){
         autoMultiplier++
     }
-    autoMultiplier = autoMultiplier + autoMultiplier
-    minimumAuto1Points = Math.round(minimumAuto1Points * 3.1)
+    autoMultiplier = autoMultiplier * 3
+    minimumAuto1Points = Math.round(minimumAuto1Points * 2.9)
 
     pointsText.textContent = points
+    boughtTimes = boughtTimes + 1
 
     automatize1.disabled = true
     automatize1.textContent = automatize1txt + ` (${minimumAuto1Points} Cookies)`
     automultInfoText.textContent = `Automatizado x${autoMultiplier}cp/s`
 }
+let automatiInterval = 500
+let automatiIntSlash = 2
+let boughtTimes = 0
 function automatizedClicks() {
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")
     if (autoMultiplier == 0) {
         return
     } else {
-        points = points + (autoMultiplier/2)
+        makePointsGreen(250)
+        points = Math.trunc(points + (autoMultiplier/Number(automatiIntSlash)))
         if (points < 10000) {
             pointsText.textContent = points
         } else if (points < 1000000) {
@@ -214,7 +238,36 @@ document.addEventListener('touchstart', function(e) {
       e.preventDefault()
     }
 }, { passive: false })
+let industrieUnlocked = false
 
-setInterval(automatizedClicks, 500)
+function checkIndustriesAvailable() {
+    if (industrieUnlocked) {
+        return
+    } else {
+        if (points < 500) {
+            industriesCont.style.display = "none"
+        } else if (points >= 500) {
+            industrieUnlocked = true
+            industriesCont.style.display = "flex"
+        }
+    }
+}
+
+function EmptyGreenWaiter() {
+    if (greenWaitTimer == 0) {
+        return
+    } else if (greenWaitTimer > 50) {
+        greenWaitTimer = greenWaitTimer - 50
+    } else {
+        greenWaitTimer = 0
+    }
+}
+function increaseGreenWaiter(milisecs) {
+    greenWaitTimer = milisecs
+}
+
+setInterval(automatizedClicks, Number(automatiInterval))
 setInterval(blockBtnDoubleCLick, 50)
 setInterval(uptimeSetter, 1000)
+setInterval(checkIndustriesAvailable, 1000)
+setInterval(greenWaitTimer, 50)
