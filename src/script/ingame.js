@@ -71,7 +71,7 @@ function mouseEffectClick() {
     cookieFx.style.display = "block"
     cookieFx.style.transform = `translate(${msx}px, ${msy}px)`
     if (activationMilisecs <= 15) {
-        msy = msy + 1
+        msy = msy + 5
         activationMilisecs = activationMilisecs + 1
         setTimeout(mouseEffectClick, 10)
     } else {
