@@ -132,7 +132,7 @@ function multiplier1() {
 
     points = points - minimum1Points
     multiplier = multiplier + multiplier
-    minimum1Points = Math.round(minimum1Points * 2.2)
+    minimum1Points = Math.round(minimum1Points * 2.8)
 
     pointsText.textContent = points
     
@@ -154,7 +154,7 @@ function automatize1() {
         autoMultiplier++
     }
     autoMultiplier = autoMultiplier * 3
-    minimumAuto1Points = Math.round(minimumAuto1Points * 3.2)
+    minimumAuto1Points = Math.round(minimumAuto1Points * 3.1)
 
     pointsText.textContent = points
     boughtTimes = boughtTimes + 1
@@ -247,9 +247,9 @@ function checkIndustriesAvailable() {
     if (industrieUnlocked) {
         return
     } else {
-        if (points < 500) {
+        if (points < 300) {
             industriesCont.style.display = "none"
-        } else if (points >= 500) {
+        } else if (points >= 300) {
             industrieUnlocked = true
             industriesCont.style.display = "flex"
         }

@@ -10,7 +10,7 @@
 <body>
     <div class="content" id="body-blur">
         <img src="../src/res/img/background.jpg" alt="Background" class="background-img">
-        <header>
+        <header class="main-header" style="display: none;" id="main-header-pause">
             <div class="left-head" id="logo-button">
                 <img src="../src/res/ico/pause.png" alt="Seta Para Trás" id="back-menu">
                 <h1>Flood the Cookie!</h1>
@@ -20,7 +20,21 @@
                 <img src="../src/res/ico/cookie.png" alt="Cookie Indicator" class="cookie-indicator">
             </div>
         </header>
-        <main>
+        <header class="menu-header" id="menu-header-pause" style="display: flex;">
+            <div class="left-head-menu" id="logo-button">
+                <button id="start-btn"  class="side-small-btn-menu-head"><img src="../src/res/ico/play.svg" alt="Play" class="side-small-btn">Iniciar</button>
+                <button id="restart-btn"  class="side-small-btn-menu-head"><img src="../src/res/ico/restart.svg" alt="Restart" class="side-small-btn">Reiniciar</button>
+                <button id="exit-btn" class="side-small-btn-menu-head"><img src="../src/res/ico/exit.svg" alt="" class="side-small-btn">Sair</button>
+            </div>
+            <div class="right-head-menu" id="all-right-span">
+                <div class="bold-head-menu">
+                    <b id="uptime">Jogando por 0 Segundos</b>
+                    <b>GitHub: ryanhenrqq</b> 
+                </div>
+                <img src="../src/res/ico/cookie.png" alt="Cookie Indicator" class="cookie-indicator">
+            </div>
+        </header>
+        <main id="main-content-blocking">
             <div class="cookie-parent">
                 <img src="../src/res/fav/favicon.png" alt="Cookie" id="cookie" class="main-cookie" draggable="false">
             </div>
@@ -54,6 +68,7 @@
         </main>
         <footer><i style="color: white;">("Flood the Cookie" é uma inspiração simplificada de <a href="https://store.steampowered.com/app/1454400/Cookie_Clicker/">Cookie Clicker</a> disponível na Steam, sem intenção nenhuma de lucro)</i></footer>
     </div>
+    <!--
     <div class="popup" id="popup-pause">
         <b>Menu - Flood The Cookie!</b> 
         <button id="start-btn"><img src="../src/res/ico/play.svg" alt="Play" class="side-small-btn">Iniciar</button>
@@ -61,7 +76,7 @@
         <button id="exit-btn"><img src="../src/res/ico/exit.svg" alt="" class="side-small-btn">Sair</button>
         <b id="uptime">Jogando por 0 Segundos</b>
         <b>GitHub: ryanhenrqq</b> 
-    </div>
+    </div>-->
     <div id="effectMouse"><img src="../src/res/fav/favicon.png" alt="Cookie Effect" draggable="false"></div>
     <script src="../src/script/audio.js"></script>
     <script src="../src/script/ingame.js"></script>

@@ -1,9 +1,11 @@
 function removePopupMenu() {
-    const popupMenu = document.getElementById("popup-pause")
-    const bodyBlur = document.getElementById("body-blur")
+    const originalMenu = document.getElementById("main-header-pause")
+    const popupMenu = document.getElementById("menu-header-pause")
+    const bodyBlur = document.getElementById("main-content-blocking")
     bodyBlur.style.filter = "none"
     bodyBlur.style.pointerEvents = "auto"
     popupMenu.style.display = "none"
+    originalMenu.style.display = "flex"
     const window = document.documentElement
     if (window.requestFullscreen){
         window.requestFullscreen()
@@ -22,11 +24,12 @@ const btnStart = document.getElementById("start-btn")
 btnStart.addEventListener("click", removePopupMenu)
 const logoBtn = document.getElementById("logo-button")
 logoBtn.addEventListener("click", function() {
-    const popupMenu = document.getElementById("popup-pause")
-    const bodyBlur = document.getElementById("body-blur")
-
+    const originalMenu = document.getElementById("main-header-pause")
+    const popupMenu = document.getElementById("menu-header-pause")
+    const bodyBlur = document.getElementById("main-content-blocking")
     bodyBlur.style.filter = "blur(5px)"
     bodyBlur.style.pointerEvents = "none"
+    originalMenu.style.display = "none"
     popupMenu.style.display = "flex"
 })
 const restartBtn = document.getElementById("restart-btn")

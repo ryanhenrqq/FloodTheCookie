@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 80vh;
-    background-color: #001757;
+    background-color: #000000;
     overflow: hidden;
 }
 
@@ -28,7 +28,7 @@ img {
   -webkit-touch-callout: none;
 }
 
-header {
+.main-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -39,6 +39,55 @@ header {
     background-color: rgba(255, 255, 255, 0.489);
     position: fixed;
 }
+.menu-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.489);
+    position: fixed;
+    height: 16rem;
+    z-index: 999;
+}
+.left-head-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 20%;
+    left: 38px;
+    gap: 14px;
+}
+.side-small-btn-menu-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    border: none;
+    padding: 16px;
+    width: 80%;
+}
+
+.right-head-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+.bold-head-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 112px;
+    color: white;
+}
 
 .left-head {
     display: flex;
@@ -48,7 +97,7 @@ header {
     position: absolute;
     left: 38px;
 }
-.left-head img{
+#back-menu{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,10 +106,10 @@ header {
     padding-right: 8px;
     filter: invert(100);
 }
-.left-head img:hover {
+#back-menu:hover {
     cursor: pointer;
 }
-.left-head img:active {
+#back-menu:active {
     filter: invert(100);
     transform: scale(0.90);
 }
@@ -108,6 +157,10 @@ main {
     align-items: center;
     width: 100%;
     height: 100%;
+}
+#main-content-blocking {
+    filter: blur(5px);
+    pointer-events: none;
 }
 
 .cont {
@@ -218,7 +271,7 @@ footer a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
     left: 40%;
     right: 45%;
     top: 40vh;
@@ -256,8 +309,6 @@ footer a{
 .content {
     width: 100%;
     height: 100%;
-    filter: opacity(0);
-    pointer-events: none;
 }
 
 .side-small-btn {
@@ -303,6 +354,21 @@ footer a{
     }
 }
 @media (max-width: 768px) {
+    .menu-header {
+        flex-direction: column;
+        height: 20rem;
+    }
+    .left-head-menu {
+        width: 80%;
+    }
+    .bold-head-menu {
+        position: fixed;
+        top: 38%;
+    }
+    .cookie-indicator {
+        top: 12px;
+        right: 28px;
+    }
     .right-head {
         font-size: 34px;
         margin-left: 12px;
