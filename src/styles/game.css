@@ -101,6 +101,7 @@ main {
     padding: 4%;
     border-radius: 20px;
     background-color: #ffffff6b;
+    box-shadow: 3px 3px 5px black;
 }
 .bottom-cont {
     display: flex;
@@ -116,6 +117,14 @@ main {
     padding: 10px;
     border-radius: 18px;
     background-color: #b6b6b6;
+    box-shadow: 3px 3px 8px black;
+    transition: box-shadow 0.3s ease;
+}
+.cont-buttons:hover {
+    box-shadow: 6px 8px 8px black;
+}
+.cont-buttons:active {
+    box-shadow: inset 3px 3px 8px black;
 }
 
 .aside-bar {
