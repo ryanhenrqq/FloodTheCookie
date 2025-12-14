@@ -4,6 +4,13 @@ const continuing = document.getElementById("goon-game")
 returner.addEventListener("click", returnToMain)
 continuing.addEventListener("click", verifyInput)
 
+document.addEventListener("DOMContentLoaded", function() {
+    if (localStorage.getItem("username")){
+        const nameInput = document.getElementById("username-hold")
+        nameInput.value = localStorage.getItem("username")
+    }
+})
+
 function returnToMain() {
     window.location.replace("../index.html")
 }

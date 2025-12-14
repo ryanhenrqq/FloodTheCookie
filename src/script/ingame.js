@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 function uptimeSetter() {
+    localStorage.setItem("timer", uptime)
     const elementTime = document.getElementById("uptime")
     uptime = uptime + 1
     let textShown = ""
@@ -98,6 +99,7 @@ cookie.addEventListener("click", function(e){
     makePointsGreen(250)
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")
+    localStorage.setItem("score", points)
     points = points + multiplier
     if (points < 10000) {
         pointsText.textContent = points

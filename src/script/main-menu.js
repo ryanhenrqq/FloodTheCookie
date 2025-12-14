@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const usernameLocal = localStorage.getItem("username")
+    const scoreLocal = localStorage.getItem("score")
+    const timeLocal = localStorage.getItem("timer")
+    const lastSessionDiv = document.getElementById("last-session-info")
+    if (usernameLocal) {
+        const welcSession = document.getElementById("welcome-session")
+        const infoSession = document.getElementById("info-session")
+        welcSession.textContent = `Bem vindo(a) de volta, ${usernameLocal}!`
+        infoSession.textContent = `Seu ultimo jogo teve ${scoreLocal} cookies em ${timeLocal} segundos`
+    } else {
+        lastSessionDiv.style.display = "none"
+    }
     returnNormalTitle()
 })
 function start(){
