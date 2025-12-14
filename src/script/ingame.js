@@ -64,7 +64,6 @@ function mouseEffectClick() {
         activationMilisecs = 0
         cookieFx.style.display = "none"
     }
-    
 }
 cookie.addEventListener("click", function(e){
     if (navigator.vibrate) {
@@ -74,6 +73,7 @@ cookie.addEventListener("click", function(e){
     const automatize1 = document.getElementById("auto1-btn")
     points = points + multiplier
     pointsText.textContent = points
+    audioCracking()
     if (points > minimum1Points) {
         multiplier1.disabled = false
     }
@@ -82,6 +82,10 @@ cookie.addEventListener("click", function(e){
     }
 })
 function multiplier1() {
+    if (navigator.vibrate) {
+        navigator.vibrate(700)
+    }
+    audioHit()
     const multiplier1 = document.getElementById("mult1-btn")
     const multiplier1txt = "Multiplicador x2"
 
@@ -96,6 +100,10 @@ function multiplier1() {
     multInfoText.textContent = `Multiplicador x${multiplier}`
 }
 function automatize1() {
+    if (navigator.vibrate) {
+        navigator.vibrate(700)
+    }
+    audioHit()
     const automatize1 = document.getElementById("auto1-btn")
     const automatize1txt = "Automatizar x2 cp/s"
 
@@ -147,6 +155,15 @@ function blockBtnDoubleCLick() {
     } else {
         automatize1.disabled = true
     }
+}
+function audioCracking() {
+    const efxCracking = new Audio("../src/wav/cracking.wav")
+    efxCracking.currentTime = 0.2
+    efxCracking.play()
+}
+function audioHit() {
+    const efxHit = new Audio("../src/wav/windshield-hit.wav")
+    efxHit.play()
 }
 setInterval(automatizedClicks, 500)
 setInterval(blockBtnDoubleCLick, 50)
