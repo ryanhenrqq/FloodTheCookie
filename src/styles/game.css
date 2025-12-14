@@ -69,7 +69,14 @@ img {
     border-radius: 24px;
     border: none;
     padding: 16px;
-    width: 80%;
+    background-color: #ffffff69;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.side-small-btn-menu-head:hover {
+    background-color: #ffffffe7;
+}
+.side-small-btn-menu-head:active {
+    transform: scale(1.1);
 }
 
 .right-head-menu {
@@ -313,7 +320,6 @@ footer a{
 
 .side-small-btn {
     margin-right: 10px;
-    filter: invert(100);
     width: 40px;
     height: 40px;
 }
@@ -363,11 +369,7 @@ footer a{
     }
     .bold-head-menu {
         position: fixed;
-        top: 38%;
-    }
-    .cookie-indicator {
-        top: 12px;
-        right: 28px;
+        top: 18rem;
     }
     .right-head {
         font-size: 34px;

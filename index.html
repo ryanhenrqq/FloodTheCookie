@@ -8,20 +8,21 @@
     <title>Flood the Cookie!</title>
 </head>
 <body>
-    <div class="cont">
-        <h1 id="alert-title">Flood the Cookie!</h1>
-        <div class="cookie-parent">
-            <img src="./src/res/fav/favicon.png" alt="Cookie" class="cookie">
+    <img src="./src/res/img/background.jpg" alt="Background Image" class="background-img">
+    <div>
+        <div class="cont">
+            <h1 id="alert-title">Flood the Cookie!</h1>
+            <div class="cookie-parent">
+                <img src="./src/res/fav/favicon.png" alt="Cookie" class="cookie">
+            </div>
+            <div class="flex-hor">
+                <button onclick="start()"> <img src="./src/res/ico/play.svg" alt="Play" class="side-small-btn">Iniciar Jogo</button>
+                <button onclick="continueGm()"> <img src="./src/res/ico/exit.svg" alt="Continue" class="side-small-btn">Continuar</button>
+            </div>
         </div>
-        
-        
-        <div class="flex-hor">
-            <button onclick="start()"> <img src="./src/res/ico/play.svg" alt="Play" class="side-small-btn">Iniciar Jogo</button>
-            <button onclick="continueGm()"> <img src="./src/res/ico/exit.svg" alt="Continue" class="side-small-btn">Continuar</button>
-        </div>
-        
+        <footer><i style="color: white;">("Flood the Cookie" é uma inspiração simplificada de <a href="https://store.steampowered.com/app/1454400/Cookie_Clicker/">Cookie Clicker</a> disponível na Steam, sem intenção nenhuma de lucro)</i></footer>
     </div>
-    <footer><i style="color: white;">("Flood the Cookie" é uma inspiração simplificada de <a href="https://store.steampowered.com/app/1454400/Cookie_Clicker/">Cookie Clicker</a> disponível na Steam, sem intenção nenhuma de lucro)</i></footer>
+    
     <script src="./src/script/main-menu.js"></script>
 </body>
 </html>
