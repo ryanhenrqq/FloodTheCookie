@@ -7,9 +7,9 @@ const rightHeadSpan = document.getElementById("all-right-span")
 
 let points = 0
 let multiplier = 1
-let minimum1Points = 70
+let minimum1Points = 30
 let autoMultiplier = 0
-let minimumAuto1Points = 250
+let minimumAuto1Points = 80
 let greenWaitTimer = 0
 
 let uptime = 0
@@ -110,7 +110,7 @@ cookie.addEventListener("click", function(e){
         } else if (points >= 2000000000 && points < 10000000000) {
             pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhões`
         } else {
-            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Bilhões`
+            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000000))} Bilhões`
         }
     }
     audioCracking()
@@ -132,7 +132,7 @@ function multiplier1() {
 
     points = points - minimum1Points
     multiplier = multiplier + multiplier
-    minimum1Points = Math.round(minimum1Points * 1.9)
+    minimum1Points = Math.round(minimum1Points * 2.2)
 
     pointsText.textContent = points
     
@@ -154,7 +154,7 @@ function automatize1() {
         autoMultiplier++
     }
     autoMultiplier = autoMultiplier * 3
-    minimumAuto1Points = Math.round(minimumAuto1Points * 2.9)
+    minimumAuto1Points = Math.round(minimumAuto1Points * 3.2)
 
     pointsText.textContent = points
     boughtTimes = boughtTimes + 1
@@ -192,7 +192,7 @@ function automatizedClicks() {
             } else if (points >= 2000000000 && points < 10000000000) {
                 pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhões`
             } else {
-                pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Bilhões`
+                pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000000))} Bilhões`
             }
         }
         audioCracking()
