@@ -38,7 +38,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 40px;
     width: 80%;
 }
 
@@ -46,12 +46,14 @@ body {
     width: 300px;
     height: 300px;
     object-fit: cover;
+    border-radius: 50%;
     animation: spiiin 40s linear infinite;
 }
 .cookie{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
     transition: transform 0.2s ease;
 }
 .cookie:hover {
@@ -111,6 +113,19 @@ footer a{
     height: 40px;
 }
 
+#username-hold {
+    border: none;
+    padding: 12px;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.username-notice {
+    font-weight: bold;
+    font-size: 11px;
+    width: 60%;
+}
+
 @keyframes spiiin {
     from {
         transform: rotate(0deg);
@@ -151,7 +166,10 @@ footer a{
         padding: 18px;
     }
 }
-@media (max-width: 484px) {
+@media (max-width: 560px) {
+    #alert-title {
+        font-size: 22px;
+    }
     .cont {
         left: 5%;
         right: 5%;

@@ -36,6 +36,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const automatize1 = document.getElementById("auto1-btn")
     const multiplier1txt = "Multiplicador x2"
     const automatize1txt = "Automatizar 2cp/s"
+    const usernameCstEntry = document.getElementById("username-custom-entry")
+    if (!localStorage.getItem("username")) {
+        usernameCstEntry.textContent = "Padaria de Usuário"
+    } else {
+        usernameCstEntry.textContent = `Padaria de ${localStorage.getItem("username")}`
+    }
+    
 
     multiplier1.disabled = true
     multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`

@@ -170,6 +170,13 @@ main {
     pointer-events: none;
 }
 
+#username-custom-entry {
+    font-size: 26px;
+    position: fixed;
+    top: 7rem;
+    color: white;
+}
+
 .cont {
     display: flex;
     flex-direction: column;

@@ -5,7 +5,7 @@ function start(){
     if (navigator.vibrate) {
         navigator.vibrate(50)
     }
-    window.location.replace("./pg/ingame.html")  
+    window.location.replace("./pg/config.html")  
 }
 function continueGm() {
     if (navigator.vibrate) {
