@@ -24,6 +24,10 @@ body {
     object-fit: cover;
 }
 
+img {
+  -webkit-touch-callout: none;
+}
+
 header {
     display: flex;
     flex-direction: row;

@@ -165,6 +165,16 @@ function audioHit() {
     const efxHit = new Audio("../src/wav/windshield-hit.wav")
     efxHit.play()
 }
+
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault()
+})
+document.addEventListener('touchstart', function(e) {
+    if (e.touches.length > 1) {
+      e.preventDefault()
+    }
+}, { passive: false })
+
 setInterval(automatizedClicks, 500)
 setInterval(blockBtnDoubleCLick, 50)
 setInterval(uptimeSetter, 1000)
