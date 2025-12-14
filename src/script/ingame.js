@@ -21,6 +21,9 @@ function makePointsRed(milisecs) {
     setTimeout(normalizePointColor, milisecs)
 }
 function makePointsGreen(milisecs) {
+    if (greenWaitTimer != 0) {
+        return
+    }
     pointsText.style.color = "#72ee82"
     setTimeout(normalizePointColor, milisecs)
 }
@@ -270,4 +273,4 @@ setInterval(automatizedClicks, Number(automatiInterval))
 setInterval(blockBtnDoubleCLick, 50)
 setInterval(uptimeSetter, 1000)
 setInterval(checkIndustriesAvailable, 1000)
-setInterval(greenWaitTimer, 50)
+setInterval(EmptyGreenWaiter, 50)
