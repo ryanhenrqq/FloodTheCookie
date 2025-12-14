@@ -91,7 +91,7 @@ function multiplier1() {
 
     points = points - minimum1Points
     multiplier = multiplier + multiplier
-    minimum1Points = Math.round(minimum1Points * 2.4)
+    minimum1Points = Math.round(minimum1Points * 2.1)
 
     pointsText.textContent = points
     
@@ -112,7 +112,7 @@ function automatize1() {
         autoMultiplier++
     }
     autoMultiplier = autoMultiplier + autoMultiplier
-    minimumAuto1Points = Math.round(minimumAuto1Points * 3.4)
+    minimumAuto1Points = Math.round(minimumAuto1Points * 3.1)
 
     pointsText.textContent = points
 
