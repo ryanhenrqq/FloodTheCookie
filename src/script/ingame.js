@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const automatize1txt = "Automatizar 2cp/s"
 
     multiplier1.disabled = true
-    multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Pontos)`
+    multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`
     automatize1.disabled = true
-    automatize1.textContent = automatize1txt + ` (${minimumAuto1Points} Pontos)`
+    automatize1.textContent = automatize1txt + ` (${minimumAuto1Points} Cookies)`
 })
 
 function uptimeSetter() {
@@ -96,7 +96,7 @@ function multiplier1() {
     pointsText.textContent = points
     
     multiplier1.disabled = true
-    multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Pontos)`
+    multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`
     multInfoText.textContent = `Multiplicador x${multiplier}`
 }
 function automatize1() {
@@ -117,7 +117,7 @@ function automatize1() {
     pointsText.textContent = points
 
     automatize1.disabled = true
-    automatize1.textContent = automatize1txt + ` (${minimumAuto1Points} Pontos)`
+    automatize1.textContent = automatize1txt + ` (${minimumAuto1Points} Cookies)`
     automultInfoText.textContent = `Automatizado x${autoMultiplier}cp/s`
 }
 function automatizedClicks() {

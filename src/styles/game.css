@@ -80,6 +80,7 @@ header {
 .bold-head {
     color: white;
     font-weight: bold;
+    padding-left: 8px;
 }
 
 
