@@ -98,19 +98,19 @@ cookie.addEventListener("click", function(e){
         pointsText.textContent = `${Math.trunc(Number(points) /Number(1000))} Mil`
     } else if (points < 1000000000) {
         if (points >= 1000000 && points < 2000000) {
-            pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhão de`
+            pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhão`
         } else if (points >= 2000000 && points < 10000000) {
-            pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhões de`
+            pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhões`
         } else {
-            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Milhões de`
+            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Milhões`
         }
     } else if (points < 1000000000000) {
         if (points >= 1000000000 && points < 2000000000) {
-            pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhão de`
+            pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhão`
         } else if (points >= 2000000000 && points < 10000000000) {
-            pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhões de`
+            pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhões`
         } else {
-            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Bilhões de`
+            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Bilhões`
         }
     }
     audioCracking()
@@ -180,19 +180,19 @@ function automatizedClicks() {
             pointsText.textContent = `${Math.trunc(Number(points) /Number(1000))} Mil`
         } else if (points < 1000000000) {
             if (points >= 1000000 && points < 2000000) {
-                pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhão de`
+                pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhão`
             } else if (points >= 2000000 && points < 10000000) {
-                pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhões de`
+                pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhões`
             } else {
-                pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Milhões de`
+                pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Milhões`
             }
         } else if (points < 1000000000000) {
             if (points >= 1000000000 && points < 2000000000) {
-                pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhão de`
+                pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhão`
             } else if (points >= 2000000000 && points < 10000000000) {
-                pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhões de`
+                pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhões`
             } else {
-                pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Bilhões de`
+                pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Bilhões`
             }
         }
         audioCracking()

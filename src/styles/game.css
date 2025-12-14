@@ -32,6 +32,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 4rem;
     padding: 10px;
@@ -42,8 +43,10 @@ header {
 .left-head {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    position: absolute;
+    left: 38px;
 }
 .left-head img{
     display: flex;
@@ -51,13 +54,13 @@ header {
     align-items: center;
     width: 50px;
     height: 50px;
-    margin-right: 15px;
+    padding-right: 8px;
     filter: invert(100);
 }
 .left-head img:hover {
     cursor: pointer;
 }
-.left-head img:hover:active {
+.left-head img:active {
     filter: invert(100);
     transform: scale(0.90);
 }
@@ -77,15 +80,23 @@ header {
 }
 
 #pointsSpan {
-    margin-left: 15px;
     letter-spacing: 1.8px;
     transition: color 0.4s ease;
+    position: absolute;
+    right: 72px;
+}
+.cookie-indicator {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    filter: invert(1);
+    position: absolute;
+    right: 38px;
 }
 
 .bold-head {
     color: white;
     font-weight: bold;
-    padding-left: 8px;
 }
 
 
