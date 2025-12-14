@@ -72,12 +72,32 @@ cookie.addEventListener("click", function(e){
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")
     points = points + multiplier
-    pointsText.textContent = points
+    if (points < 10000) {
+        pointsText.textContent = points
+    } else if (points < 1000000) {
+        pointsText.textContent = `${Math.trunc(Number(points) /Number(1000))} Mil`
+    } else if (points < 1000000000) {
+        if (points >= 1000000 && points < 2000000) {
+            pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhão de`
+        } else if (points >= 2000000 && points < 10000000) {
+            pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhões de`
+        } else {
+            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Milhões de`
+        }
+    } else if (points < 1000000000000) {
+        if (points >= 1000000000 && points < 2000000000) {
+            pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhão de`
+        } else if (points >= 2000000000 && points < 10000000000) {
+            pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhões de`
+        } else {
+            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Bilhões de`
+        }
+    }
     audioCracking()
-    if (points > minimum1Points) {
+    if (points >= minimum1Points) {
         multiplier1.disabled = false
     }
-    if (points > minimumAuto1Points) {
+    if (points >= minimumAuto1Points) {
         automatize1.disabled = false
     }
 })
@@ -127,7 +147,27 @@ function automatizedClicks() {
         return
     } else {
         points = points + (autoMultiplier/2)
-        pointsText.textContent = points
+        if (points < 10000) {
+            pointsText.textContent = points
+        } else if (points < 1000000) {
+            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000))} Mil`
+        } else if (points < 1000000000) {
+            if (points >= 1000000 && points < 2000000) {
+                pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhão de`
+            } else if (points >= 2000000 && points < 10000000) {
+                pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhões de`
+            } else {
+                pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Milhões de`
+            }
+        } else if (points < 1000000000000) {
+            if (points >= 1000000000 && points < 2000000000) {
+                pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhão de`
+            } else if (points >= 2000000000 && points < 10000000000) {
+                pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhões de`
+            } else {
+                pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Bilhões de`
+            }
+        }
         audioCracking()
         if (points > minimum1Points) {
             multiplier1.disabled = false
