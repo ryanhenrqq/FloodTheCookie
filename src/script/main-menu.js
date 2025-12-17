@@ -20,13 +20,20 @@ function start(){
     window.location.replace("./pg/config.html")  
 }
 function continueGm() {
-    if (navigator.vibrate) {
-        navigator.vibrate(500)
+    if (localStorage.getItem("continue-last-game")){
+        if (navigator.vibrate) {
+            navigator.vibrate(50)
+        }
+        window.location.replace("./pg/config.html")  
+    } else {
+        if (navigator.vibrate) {
+            navigator.vibrate(500)
+        }
+        const alerter = document.getElementById("alert-title")
+        alerter.textContent = "Não há jogo salvo!"
+        alerter.style.color = "red"
+        setTimeout(returnNormalTitle, 3000)
     }
-    const alerter = document.getElementById("alert-title")
-    alerter.textContent = "Não há jogo salvo!"
-    alerter.style.color = "red"
-    setTimeout(returnNormalTitle, 3000)
 }
 function returnNormalTitle() {
     const alerter = document.getElementById("alert-title")

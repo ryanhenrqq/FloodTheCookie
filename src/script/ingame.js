@@ -14,6 +14,7 @@ let greenWaitTimer = 0
 
 let uptime = 0
 let clickpersecs = 0
+let gameSaved = false
 
 function makePointsRed(milisecs) {
     increaseGreenWaiter(Number(milisecs) * 1.5)
@@ -43,6 +44,21 @@ document.addEventListener("DOMContentLoaded", function() {
         usernameCstEntry.textContent = `Padaria de ${localStorage.getItem("username")}`
     }
     
+    if (localStorage.getItem("continue-last-game")) {
+        points = localStorage.getItem("last-game-points")
+        multiplier = localStorage.getItem("last-game-multiplier")
+        minimum1Points = localStorage.getItem("last-game-minimum1points")
+        autoMultiplier = localStorage.getItem("last-game-automultiplier")
+        minimumAuto1Points = localStorage.getItem("last-game-minimumauto1points")
+        uptime = localStorage.getItem("last-game-uptime")
+    } else {
+        localStorage.setItem("last-game-points", 0)
+        localStorage.setItem("last-game-multiplier", 0)
+        localStorage.setItem("last-game-minimum1points", 0)
+        localStorage.setItem("last-game-automultiplier", 0)
+        localStorage.setItem("last-game-minimumauto1points", 0)
+        localStorage.setItem("last-game-uptime", 0)
+    }
 
     multiplier1.disabled = true
     multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`
@@ -51,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 function uptimeSetter() {
+    localStorage.setItem("last-game-uptime", uptime)
     localStorage.setItem("timer", uptime)
     const elementTime = document.getElementById("uptime")
     uptime = uptime + 1
@@ -139,11 +156,18 @@ function multiplier1() {
     const multiplier1 = document.getElementById("mult1-btn")
     const multiplier1txt = "Multiplicador x2"
 
+    if (!gameSaved) {
+        localStorage.setItem("continue-last-game", true)
+        alert("jogo salvo")
+    }
+
     points = points - minimum1Points
     multiplier = multiplier + multiplier
     minimum1Points = Math.round(minimum1Points * 2.8)
 
     pointsText.textContent = points
+    localStorage.setItem("last-game-multiplier", multiplier)
+    localStorage.setItem("last-game-minimum1points", minimum1Points)
     
     multiplier1.disabled = true
     multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`
@@ -167,6 +191,8 @@ function automatize1() {
 
     pointsText.textContent = points
     boughtTimes = boughtTimes + 1
+    localStorage.setItem("last-game-automultiplier", autoMultiplier)
+    localStorage.setItem("last-game-minimumauto1points", minimumAuto1Points)
 
     automatize1.disabled = true
     automatize1.textContent = automatize1txt + ` (${minimumAuto1Points} Cookies)`
@@ -182,6 +208,7 @@ function automatizedClicks() {
         return
     } else {
         makePointsGreen(250)
+        localStorage.setItem("last-game-points", points)
         points = Math.trunc(points + (autoMultiplier/Number(automatiIntSlash)))
         if (points < 10000) {
             pointsText.textContent = points
@@ -215,21 +242,6 @@ function automatizedClicks() {
         } else {
             automatize1.disabled = true
         }
-    }
-}
-function blockBtnDoubleCLick() {
-    const multiplier1 = document.getElementById("mult1-btn")
-    const automatize1 = document.getElementById("auto1-btn")
-
-    if (points > minimum1Points) {
-        multiplier1.disabled = false
-    } else {
-        multiplier1.disabled = true
-    }
-    if (points > minimumAuto1Points) {
-        automatize1.disabled = false
-    } else {
-        automatize1.disabled = true
     }
 }
 function audioCracking() {
@@ -279,7 +291,6 @@ function increaseGreenWaiter(milisecs) {
 }
 
 setInterval(automatizedClicks, Number(automatiInterval))
-setInterval(blockBtnDoubleCLick, 50)
 setInterval(uptimeSetter, 1000)
 setInterval(checkIndustriesAvailable, 1000)
 setInterval(EmptyGreenWaiter, 50)
