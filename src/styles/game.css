@@ -24,6 +24,17 @@ body {
     object-fit: cover;
 }
 
+button {
+  text-decoration: none;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 img {
   -webkit-touch-callout: none;
 }
