@@ -35,9 +35,9 @@ function normalizePointColor() {
 document.addEventListener("DOMContentLoaded", function() {
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")
+    const usernameCstEntry = document.getElementById("username-custom-entry")
     const multiplier1txt = "Multiplicador x2"
     const automatize1txt = "Automatizar 2cp/s"
-    const usernameCstEntry = document.getElementById("username-custom-entry")
     if (!localStorage.getItem("username")) {
         usernameCstEntry.textContent = "Padaria de Usuário"
     } else {
@@ -45,12 +45,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     if (localStorage.getItem("continue-last-game")) {
-        points = localStorage.getItem("last-game-points")
-        multiplier = localStorage.getItem("last-game-multiplier")
-        minimum1Points = localStorage.getItem("last-game-minimum1points")
-        autoMultiplier = localStorage.getItem("last-game-automultiplier")
-        minimumAuto1Points = localStorage.getItem("last-game-minimumauto1points")
-        uptime = localStorage.getItem("last-game-uptime")
+        points = Number(localStorage.getItem("last-game-points"))
+        multiplier = Number(localStorage.getItem("last-game-multiplier"))
+        minimum1Points = Number(localStorage.getItem("last-game-minimum1points"))
+        autoMultiplier = Number(localStorage.getItem("last-game-automultiplier"))
+        minimumAuto1Points = Number(localStorage.getItem("last-game-minimumauto1points"))
+        uptime = Number(localStorage.getItem("last-game-uptime"))
+        industrieUnlocked = true
+        multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`
+        multInfoText.textContent = `Multiplicador x${multiplier}`
+        automatize1.textContent = automatize1txt + ` (${minimumAuto1Points} Cookies)`
+        automultInfoText.textContent = `Automatizado x${autoMultiplier}cp/s`
     } else {
         localStorage.setItem("last-game-points", 0)
         localStorage.setItem("last-game-multiplier", 0)
@@ -58,12 +63,13 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("last-game-automultiplier", 0)
         localStorage.setItem("last-game-minimumauto1points", 0)
         localStorage.setItem("last-game-uptime", 0)
-    }
 
-    multiplier1.disabled = true
-    multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`
-    automatize1.disabled = true
-    automatize1.textContent = automatize1txt + ` (${minimumAuto1Points} Cookies)`
+        
+        multiplier1.disabled = true
+        multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`
+        automatize1.disabled = true
+        automatize1.textContent = automatize1txt + ` (${minimumAuto1Points} Cookies)`
+    }
 })
 
 function uptimeSetter() {

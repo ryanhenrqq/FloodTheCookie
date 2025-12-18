@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     returnNormalTitle()
 })
 function start(){
+    localStorage.removeItem("continue-last-game")
     if (navigator.vibrate) {
         navigator.vibrate(50)
     }
@@ -24,7 +25,7 @@ function continueGm() {
         if (navigator.vibrate) {
             navigator.vibrate(50)
         }
-        window.location.replace("./pg/config.html")  
+        window.location.replace("./pg/ingame.html")  
     } else {
         if (navigator.vibrate) {
             navigator.vibrate(500)
