@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     returnNormalTitle()
 })
 function start(){
+    audioCracking()
     localStorage.removeItem("continue-last-game")
     if (navigator.vibrate) {
         navigator.vibrate(50)
@@ -21,6 +22,7 @@ function start(){
     window.location.replace("./pg/config.html")  
 }
 function continueGm() {
+    audioCracking()
     if (localStorage.getItem("continue-last-game")){
         if (navigator.vibrate) {
             navigator.vibrate(50)
@@ -37,6 +39,7 @@ function continueGm() {
     }
 }
 function settingPage() {
+    audioCracking()
     const alerter = document.getElementById("alert-title")
     alerter.textContent = "Em breve!"
     alerter.style.color = "red"
