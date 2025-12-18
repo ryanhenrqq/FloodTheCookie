@@ -36,6 +36,12 @@ function continueGm() {
         setTimeout(returnNormalTitle, 3000)
     }
 }
+function settingPage() {
+    const alerter = document.getElementById("alert-title")
+    alerter.textContent = "Em breve!"
+    alerter.style.color = "red"
+    setTimeout(returnNormalTitle, 3000)
+}
 function returnNormalTitle() {
     const alerter = document.getElementById("alert-title")
     alerter.textContent = "FloodTheCookie"
