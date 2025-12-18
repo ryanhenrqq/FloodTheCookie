@@ -339,9 +339,10 @@ footer a{
     animation: spiiin 4s linear infiinite;
 }
 #effectMouse img{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+    filter: saturate(5);
 }
 
 @keyframes spiiin {

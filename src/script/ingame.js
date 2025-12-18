@@ -163,8 +163,8 @@ function multiplier1() {
     const multiplier1txt = "Multiplicador x2"
 
     if (!gameSaved) {
+        gameSaved = true
         localStorage.setItem("continue-last-game", true)
-        alert("jogo salvo")
     }
 
     points = points - minimum1Points
