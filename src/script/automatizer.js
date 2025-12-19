@@ -88,5 +88,17 @@ function automatizedClicks() {
         }
     }
 }
+function bugReporterForAutomatized() {
+    let points = localStorage.getItem("last-game-points")
+    const automatize1 = document.getElementById("auto1-btn")
+    /* Corrigir posteriormente */
+    if (points < minimum1Points && automatize1.disabled == false) {
+        console.log("automatizer.js")
+        localStorage.clear("continue-last-game")
+        alert("Bug encontrado!")
+        window.location.replace("../index.html")
+    }
+}
 
 setInterval(automatizedClicks, Number(automatiInterval))
+setInterval(bugReporterForAutomatized, 1000)

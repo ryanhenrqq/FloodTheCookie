@@ -62,10 +62,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function uptimeSetter() {
     localStorage.setItem("last-game-uptime", uptime)
+    const multiplier1 = document.getElementById("mult1-btn")
     localStorage.setItem("timer", uptime)
     const elementTime = document.getElementById("uptime")
     uptime = uptime + 1
     let textShown = ""
+    /* Some Precautions */
+    if (points < 0) {
+        localStorage.clear("continue-last-game")
+        alert("Bug encontrado!")
+        window.location.replace("../index.html")
+    }
+    if (points < minimum1Points && multiplier1.disabled == false) {
+        /* Corrigir posteriormente */
+        console.log("multiplier.js")
+        localStorage.clear("continue-last-game")
+        alert("Bug encontrado!")
+        window.location.replace("../index.html")
+    }
+
+    /* Final Function */
     if (uptime < 60) {
         textShown = `Jogando por ${uptime} Segundos`
         elementTime.textContent = textShown
