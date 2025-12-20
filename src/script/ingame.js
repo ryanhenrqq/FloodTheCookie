@@ -7,7 +7,7 @@ const rightHeadSpan = document.getElementById("all-right-span")
 
 let points = 0
 let multiplier = 1
-let minimum1Points = 30
+let minimum1Points = 15
 let greenWaitTimer = 0
 
 let uptime = 0
@@ -144,7 +144,7 @@ function multiplier1() {
 
     points = points - minimum1Points
     multiplier = multiplier + multiplier
-    minimum1Points = Math.round(minimum1Points * 2.8)
+    minimum1Points = Math.round(minimum1Points * 2.2)
 
     pointsText.textContent = points
     localStorage.setItem("last-game-multiplier", multiplier)

@@ -1,5 +1,5 @@
 let autoMultiplier = 0
-let minimumAuto1Points = 80
+let minimumAuto1Points = 150
 
 let automatiInterval = 500
 let automatiIntSlash = 2
@@ -33,7 +33,7 @@ function automatize1() {
         autoMultiplier++
     }
     autoMultiplier = autoMultiplier * 3
-    minimumAuto1Points = Math.round(minimumAuto1Points * 3.1)
+    minimumAuto1Points = Math.round(minimumAuto1Points * 2.8)
 
     pointsText.textContent = points
     boughtTimes = boughtTimes + 1
