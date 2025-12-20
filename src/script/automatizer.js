@@ -91,14 +91,13 @@ function automatizedClicks() {
 function bugReporterForAutomatized() {
     let points = localStorage.getItem("last-game-points")
     const automatize1 = document.getElementById("auto1-btn")
-    /* Corrigir posteriormente */
+    /* Corrigir posteriormente *//*
     if (points < minimum1Points && automatize1.disabled == false) {
-        console.log("automatizer.js")
-        localStorage.clear("continue-last-game")
-        alert("Bug encontrado!")
-        window.location.replace("../index.html")
-    }
+        automatize1.disabled = true
+        console.log("automatizer.js: fixed button for automatizer (points lower than the minimum requirement)")
+    }*/
+    
 }
 
 setInterval(automatizedClicks, Number(automatiInterval))
-setInterval(bugReporterForAutomatized, 1000)
+setInterval(bugReporterForAutomatized, 100)

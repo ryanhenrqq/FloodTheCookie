@@ -13,6 +13,7 @@ let greenWaitTimer = 0
 let uptime = 0
 let clickpersecs = 0
 let gameSaved = false
+let industrieUnlocked = false
 
 function makePointsRed(milisecs) {
     increaseGreenWaiter(Number(milisecs) * 1.5)
@@ -45,16 +46,17 @@ document.addEventListener("DOMContentLoaded", function() {
         multiplier = Number(localStorage.getItem("last-game-multiplier"))
         minimum1Points = Number(localStorage.getItem("last-game-minimum1points"))
         uptime = Number(localStorage.getItem("last-game-uptime"))
-        industrieUnlocked = true
+        industrieUnlocked = false
         multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`
         multInfoText.textContent = `Multiplicador x${multiplier}`
     } else {
         localStorage.setItem("last-game-points", 0)
         localStorage.setItem("last-game-multiplier", 0)
-        localStorage.setItem("last-game-minimum1points", 0)
+        localStorage.setItem("last-game-minimum1points", 30)
         localStorage.setItem("last-game-automultiplier", 0)
-        localStorage.setItem("last-game-minimumauto1points", 0)
+        localStorage.setItem("last-game-minimumauto1points", 80)
         localStorage.setItem("last-game-uptime", 0)
+        localStorage.setItem("last-game-unlockIndustry", false)
         multiplier1.disabled = true
         multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`
     }
@@ -75,10 +77,8 @@ function uptimeSetter() {
     }
     if (points < minimum1Points && multiplier1.disabled == false) {
         /* Corrigir posteriormente */
-        console.log("multiplier.js")
-        localStorage.clear("continue-last-game")
-        alert("Bug encontrado!")
-        window.location.replace("../index.html")
+        multiplier1.disabled = true
+        console.log("multiplier.js: fixed button for multiplier (points lower than the minimum requirement)")
     }
 
     /* Final Function */
@@ -164,15 +164,15 @@ document.addEventListener('touchstart', function(e) {
     }
 }, { passive: false })
 
-let industrieUnlocked = false
-
 function checkIndustriesAvailable() {
     if (industrieUnlocked) {
         return
     } else {
         if (points < 300) {
             industriesCont.style.display = "none"
+            industrieUnlocked = false
         } else if (points >= 300) {
+            localStorage.setItem("last-game-unlockIndustry", true)
             industrieUnlocked = true
             industriesCont.style.display = "flex"
         }
