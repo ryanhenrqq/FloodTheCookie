@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     if (localStorage.getItem("continue-last-game")) {
+        const welcomeMenu = document.getElementById("welcome-popup")
+        welcomeMenu.style.display = "none"
         points = Number(localStorage.getItem("last-game-points"))
         multiplier = Number(localStorage.getItem("last-game-multiplier"))
         multiplierLvl = Number(localStorage.getItem("last-game-multiplierlvl"))

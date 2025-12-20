@@ -58,3 +58,9 @@ restartBtn.addEventListener("click", function(){
 })
 const exitBtn = document.getElementById("exit-btn")
 exitBtn.addEventListener("click", function() { window.location.href = "../index.html";})
+
+const welcomeMenu = document.getElementById("welcome-popup")
+const welcomeStart = document.getElementById("welcome-start-btn")
+welcomeStart.addEventListener("click", function() {
+    welcomeMenu.style.display = "none"
+})

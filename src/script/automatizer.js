@@ -9,6 +9,8 @@ let boughtTimes = 0
 document.addEventListener("DOMContentLoaded", function() {
     const automatize1 = document.getElementById("price-auto1")
     if (localStorage.getItem("continue-last-game")) {
+        const welcomeMenu = document.getElementById("welcome-popup")
+        welcomeMenu.style.display = "none"
         autoMultiplier = Number(localStorage.getItem("last-game-automultiplier"))
         autoMultiplier = Number(localStorage.getItem("last-game-automultiplierlvl"))
         minimumAuto1Points = Number(localStorage.getItem("last-game-minimumauto1points"))
