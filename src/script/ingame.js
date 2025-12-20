@@ -33,8 +33,8 @@ function normalizePointColor() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const multiplier1 = document.getElementById("price-mult1")
+    const multiplier1btn = document.getElementById("mult1-btn0")
     const usernameCstEntry = document.getElementById("username-custom-entry")
-    const multiplier1txt = ""
     if (!localStorage.getItem("username")) {
         usernameCstEntry.textContent = "Padaria de Usuário"
     } else {
@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("last-game-minimumauto1points", 80)
         localStorage.setItem("last-game-uptime", 0)
         localStorage.setItem("last-game-unlockIndustry", false)
-        multiplier1.disabled = true
-        multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`
+        multiplier1btn.disabled = true
+        multiplier1.textContent = `Para começar, junte ${minimum1Points} Cookies`
     }
 })
 
@@ -95,8 +95,8 @@ cookie.addEventListener("click", function(e){
         navigator.vibrate(50)
     }
     makePointsGreen(250)
-    const multiplier1 = document.getElementById("mult1-btn")
-    const automatize1 = document.getElementById("auto1-btn")
+    const multiplier1 = document.getElementById("mult1-btn0")
+    const automatize1 = document.getElementById("auto1-btn0")
     localStorage.setItem("score", points)
     points = points + multiplier
     if (points < 10000) {
@@ -135,7 +135,7 @@ function multiplier1() {
     audioHit()
     makePointsRed(250)
     const multiplier1 = document.getElementById("price-mult1")
-    const multiplier1txt = "Multiplicador x2"
+    const multiplier1btn = document.getElementById("mult1-btn0")
 
     if (!gameSaved) {
         gameSaved = true
@@ -150,7 +150,7 @@ function multiplier1() {
     localStorage.setItem("last-game-multiplier", multiplier)
     localStorage.setItem("last-game-minimum1points", minimum1Points)
     
-    multiplier1.disabled = true
+    multiplier1btn.disabled = true
     multiplier1.textContent = `Necessario ${minimum1Points} Cookies`
     multInfoText.textContent = `Multiplicador x${multiplier}`
 }

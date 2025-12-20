@@ -25,7 +25,8 @@ function automatize1() {
     }
     audioHit()
     makePointsRed(250)
-    const automatize1 = document.getElementById("auto1-btn")
+    const automatize1 = document.getElementById("price-auto1")
+    const automatize1btn = document.getElementById("auto1-btn0")
     points = points - minimumAuto1Points
     if (autoMultiplier == 0){
         autoMultiplier++
@@ -38,15 +39,13 @@ function automatize1() {
     localStorage.setItem("last-game-automultiplier", autoMultiplier)
     localStorage.setItem("last-game-minimumauto1points", minimumAuto1Points)
 
-    automatize1.disabled = true
+    automatize1btn.disabled = true
     automatize1.textContent = `Necessario ${minimumAuto1Points} Cookies`
     automultInfoText.textContent = `Automatizado x${autoMultiplier}cp/s`
 }
 
 function automatizedClicks() {
-    const multiplier1 = document.getElementById("mult1-btn")
     const multiplier1btn = document.getElementById("mult1-btn0")
-    const automatize1 = document.getElementById("auto1-btn")
     const automatize1btn = document.getElementById("auto1-btn0")
     if (autoMultiplier == 0) {
         return
