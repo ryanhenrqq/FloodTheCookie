@@ -32,9 +32,9 @@ function normalizePointColor() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    const multiplier1 = document.getElementById("mult1-btn")
+    const multiplier1 = document.getElementById("price-mult1")
     const usernameCstEntry = document.getElementById("username-custom-entry")
-    const multiplier1txt = "Multiplicador x2"
+    const multiplier1txt = ""
     if (!localStorage.getItem("username")) {
         usernameCstEntry.textContent = "Padaria de Usuário"
     } else {
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         minimum1Points = Number(localStorage.getItem("last-game-minimum1points"))
         uptime = Number(localStorage.getItem("last-game-uptime"))
         industrieUnlocked = false
-        multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`
+        multiplier1.textContent = `Necessario ${minimum1Points} Cookies`
         multInfoText.textContent = `Multiplicador x${multiplier}`
     } else {
         localStorage.setItem("last-game-points", 0)
@@ -134,7 +134,7 @@ function multiplier1() {
     }
     audioHit()
     makePointsRed(250)
-    const multiplier1 = document.getElementById("mult1-btn")
+    const multiplier1 = document.getElementById("price-mult1")
     const multiplier1txt = "Multiplicador x2"
 
     if (!gameSaved) {
@@ -151,7 +151,7 @@ function multiplier1() {
     localStorage.setItem("last-game-minimum1points", minimum1Points)
     
     multiplier1.disabled = true
-    multiplier1.textContent = multiplier1txt + ` (${minimum1Points} Cookies)`
+    multiplier1.textContent = `Necessario ${minimum1Points} Cookies`
     multInfoText.textContent = `Multiplicador x${multiplier}`
 }
 

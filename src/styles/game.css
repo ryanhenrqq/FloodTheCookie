@@ -206,7 +206,12 @@ main {
 }
 
 .cont-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     border: none;
+    gap: 12px;
     margin: 8px;
     font-size: 13px;
     font-weight: bolder;
@@ -340,6 +345,12 @@ footer a{
     margin-right: 10px;
     width: 40px;
     height: 40px;
+}
+
+.auxiliary-btn-icons {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
 }
 
 #effectMouse {
