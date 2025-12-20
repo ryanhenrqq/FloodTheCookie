@@ -7,6 +7,7 @@ const rightHeadSpan = document.getElementById("all-right-span")
 
 let points = 0
 let multiplier = 1
+let multiplierLvl = 1
 let minimum1Points = 15
 let greenWaitTimer = 0
 
@@ -44,16 +45,19 @@ document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem("continue-last-game")) {
         points = Number(localStorage.getItem("last-game-points"))
         multiplier = Number(localStorage.getItem("last-game-multiplier"))
+        multiplierLvl = Number(localStorage.getItem("last-game-multiplierlvl"))
         minimum1Points = Number(localStorage.getItem("last-game-minimum1points"))
         uptime = Number(localStorage.getItem("last-game-uptime"))
         industrieUnlocked = false
         multiplier1.textContent = `Necessario ${minimum1Points} Cookies`
-        multInfoText.textContent = `Multiplicador x${multiplier}`
+        multInfoText.textContent = `Nivel ${multiplierLvl}`
     } else {
         localStorage.setItem("last-game-points", 0)
         localStorage.setItem("last-game-multiplier", 0)
+        localStorage.setItem("last-game-multiplierlvl", 0)
         localStorage.setItem("last-game-minimum1points", 30)
         localStorage.setItem("last-game-automultiplier", 0)
+        localStorage.setItem("last-game-automultiplierlvl", 0)
         localStorage.setItem("last-game-minimumauto1points", 80)
         localStorage.setItem("last-game-uptime", 0)
         localStorage.setItem("last-game-unlockIndustry", false)
@@ -145,14 +149,16 @@ function multiplier1() {
     points = points - minimum1Points
     multiplier = multiplier + multiplier
     minimum1Points = Math.round(minimum1Points * 2.2)
+    multiplierLvl = multiplierLvl + 1
 
     pointsText.textContent = points
     localStorage.setItem("last-game-multiplier", multiplier)
     localStorage.setItem("last-game-minimum1points", minimum1Points)
+    localStorage.setItem("last-game-multiplierlvl", multiplierLvl)
     
     multiplier1btn.disabled = true
     multiplier1.textContent = `Necessario ${minimum1Points} Cookies`
-    multInfoText.textContent = `Multiplicador x${multiplier}`
+    multInfoText.textContent = `Nivel ${multiplierLvl}`
 }
 
 document.addEventListener('contextmenu', function(e) {

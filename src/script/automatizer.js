@@ -1,4 +1,5 @@
 let autoMultiplier = 0
+let autoMultiplierLvl = 0
 let minimumAuto1Points = 150
 
 let automatiInterval = 500
@@ -7,15 +8,16 @@ let boughtTimes = 0
 
 document.addEventListener("DOMContentLoaded", function() {
     const automatize1 = document.getElementById("price-auto1")
-    const automatize1txt = "Automatizar 2cp/s"
     if (localStorage.getItem("continue-last-game")) {
         autoMultiplier = Number(localStorage.getItem("last-game-automultiplier"))
+        autoMultiplier = Number(localStorage.getItem("last-game-automultiplierlvl"))
         minimumAuto1Points = Number(localStorage.getItem("last-game-minimumauto1points"))
         automatize1.textContent = `Necessario ${minimumAuto1Points} Cookies`
-        automultInfoText.textContent = `Automatizado x${autoMultiplier}cp/s`
+        automultInfoText.textContent = `Nivel ${autoMultiplierLvl}`
     } else {
         automatize1.disabled = true
-        automatize1.textContent = automatize1txt + ` (${minimumAuto1Points} Cookies)`
+        automatize1.textContent = `Necessario ${minimumAuto1Points} Cookies`
+        automultInfoText.textContent = `Nivel ${autoMultiplierLvl}`
     }
 })
 
@@ -33,15 +35,17 @@ function automatize1() {
     }
     autoMultiplier = autoMultiplier * 3
     minimumAuto1Points = Math.round(minimumAuto1Points * 2.8)
+    autoMultiplierLvl = autoMultiplierLvl + 1
 
     pointsText.textContent = points
     boughtTimes = boughtTimes + 1
     localStorage.setItem("last-game-automultiplier", autoMultiplier)
+    localStorage.setItem("last-game-automultiplierlvl", autoMultiplierLvl)
     localStorage.setItem("last-game-minimumauto1points", minimumAuto1Points)
 
     automatize1btn.disabled = true
     automatize1.textContent = `Necessario ${minimumAuto1Points} Cookies`
-    automultInfoText.textContent = `Automatizado x${autoMultiplier}cp/s`
+    automultInfoText.textContent = `Nivel ${autoMultiplierLvl}`
 }
 
 function automatizedClicks() {

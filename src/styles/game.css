@@ -181,10 +181,21 @@ main {
     pointer-events: none;
 }
 
-#username-custom-entry {
-    font-size: 26px;
+.infosplayer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 7rem;
+    gap: 16px;
+}
+.infosplayer img {
+    filter: invert(1);
+}
+
+#username-custom-entry {
+    font-size: 26px;
     color: white;
 }
 
