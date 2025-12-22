@@ -379,7 +379,7 @@ footer a{
 }
 
 .welcomePopup {
-    background-color: #008cff;
+    background-color: #045a74;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -390,6 +390,11 @@ footer a{
     gap: 16px;
     z-index: 0;
     transition: display 1s ease;
+}
+.welcomePopup b, .welcomePopup p {
+    color: white;
+    font-weight: bold;
+    margin: 20px;
 }
 .welcomePopup img {
     width: 30%;

@@ -40,20 +40,22 @@ const restartBtn = document.getElementById("restart-btn")
 restartBtn.addEventListener("click", function(){
     const multiplier1 = document.getElementById("mult1-btn")
     const automatize1 = document.getElementById("auto1-btn")
+    const multiplier2 = document.getElementById("price-mult1-btn")
+    const automatize2 = document.getElementById("price-auto1-btn")
     points = 0
     multiplier = 1
     minimum1Points = 30
     autoMultiplier = 0
     minimumAuto1Points = 80
+    multiplierLvl = 1
+    autoMultiplierLvl = 0
     multiplier1.disabled = true
     automatize1.disabled = true
-    const multiplier1txt = "Multiplier x2"
-    const automatize1txt = "Automatize 2cp/s"
-    multiplier1.textContent = multiplier1txt + ` (Min. ${minimum1Points} Points)`
-    automatize1.textContent = automatize1txt + ` (Min. ${minimumAuto1Points} Points)`
+    multiplier2.textContent = `Necessario ${minimum1Points} Cookies`
+    automatize2.textContent = `Necessario ${minimumAuto1Points} Cookies`
     pointsText.textContent = points
-    multInfoText.textContent = `Multiplier x1`
-    automultInfoText.textContent = `Not Automatizated`
+    multInfoText.textContent = `Nivel ${multiplierLvl}`
+    automultInfoText.textContent = `Nivel ${autoMultiplierLvl}`
     removePopupMenu()
 })
 const exitBtn = document.getElementById("exit-btn")

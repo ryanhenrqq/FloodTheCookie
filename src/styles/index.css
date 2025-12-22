@@ -68,6 +68,9 @@ body {
     flex-direction: row;
     gap: 24px;
 }
+.fill-width {
+    width: 100%;
+}
 
 .cont button{
     display: flex;
