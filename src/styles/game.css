@@ -260,7 +260,7 @@ main {
     transition: transform 0.1s ease;
     object-fit: cover;
     -webkit-tap-highlight-color: transparent;
-    /*border-radius: 50%;*/
+    border-radius: 50%;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
 }
 .main-cookie:hover {
@@ -416,11 +416,11 @@ footer a{
     transform: scale(1.1);
 }
 
-@keyframes spiiin { /* change it back after christmas (359deg) */
+@keyframes spiiin {
     from {
         transform: rotate(0deg);
     } to {
-        transform: rotate(0deg);
+        transform: rotate(359deg);
     }
 }
 

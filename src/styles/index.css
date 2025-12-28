@@ -46,14 +46,14 @@ body {
     width: 300px;
     height: 300px;
     object-fit: cover;
-    /*border-radius: 50%;*/ /* change it back after christmas */
+    border-radius: 50%;
     animation: spiiin 40s linear infinite;
 }
 .cookie{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /*border-radius: 50%;*/
+    border-radius: 50%;
     transition: transform 0.2s ease;
 }
 .cookie:hover {
@@ -135,11 +135,11 @@ footer a{
     width: 60%;
 }
 
-@keyframes spiiin { /* change it back after christmas (359deg) */
+@keyframes spiiin {
     from {
         transform: rotate(0deg);
     } to {
-        transform: rotate(0deg);
+        transform: rotate(359deg);
     }
 }
 
