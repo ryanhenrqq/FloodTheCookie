@@ -36,10 +36,10 @@ body {
 
 #alert-title {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    width: 80%;
 }
 
 .cookie-parent {
@@ -54,10 +54,12 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    -webkit-tap-highlight-color: transparent;
     transition: transform 0.2s ease;
 }
 .cookie:hover {
     transform: scale(1.02);
+    cursor: pointer;
 }
 .cookie:active {
     transform: scale(1.1);
@@ -68,12 +70,22 @@ body {
     flex-direction: row;
     gap: 24px;
 }
+.flex-hor-centered {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
 .flex-col{
     display:  flex;
     flex-direction: column;
 }
 .fill-width {
     width: 100%;
+}
+.space-between-bottom {
+    margin-bottom: 24px;
 }
 
 .cont button{
@@ -126,7 +138,7 @@ footer a{
     height: 40px;
 }
 
-#username-hold {
+.input-layout-big {
     border: none;
     padding: 12px;
     border-radius: 18px;

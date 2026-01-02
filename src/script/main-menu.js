@@ -50,12 +50,3 @@ function returnNormalTitle() {
     alerter.textContent = "FloodTheCookie"
     alerter.style.color = "black"
 }
-
-// Settings Pages components
-function returnToMainMenu() {
-    audioCracking()
-    if (navigator.vibrate) {
-        navigator.vibrate(50)
-    }
-    window.location.replace("../index.html")
-}
