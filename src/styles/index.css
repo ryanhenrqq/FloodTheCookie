@@ -68,6 +68,10 @@ body {
     flex-direction: row;
     gap: 24px;
 }
+.flex-col{
+    display:  flex;
+    flex-direction: column;
+}
 .fill-width {
     width: 100%;
 }

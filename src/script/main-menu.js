@@ -40,13 +40,22 @@ function continueGm() {
 }
 function settingPage() {
     audioCracking()
-    const alerter = document.getElementById("alert-title")
-    alerter.textContent = "Em breve!"
-    alerter.style.color = "red"
-    setTimeout(returnNormalTitle, 3000)
+    if (navigator.vibrate) {
+        navigator.vibrate(50)
+    }
+    window.location.replace("./pg/settings.html")
 }
 function returnNormalTitle() {
     const alerter = document.getElementById("alert-title")
     alerter.textContent = "FloodTheCookie"
     alerter.style.color = "black"
+}
+
+// Settings Pages components
+function returnToMainMenu() {
+    audioCracking()
+    if (navigator.vibrate) {
+        navigator.vibrate(50)
+    }
+    window.location.replace("../index.html")
 }
