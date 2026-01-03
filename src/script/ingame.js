@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function uptimeSetter() {
     localStorage.setItem("last-game-uptime", uptime)
-    const multiplier1 = document.getElementById("mult1-btn")
+    const multiplier1 = document.getElementById("mult1-btn0")
     localStorage.setItem("timer", uptime)
     const elementTime = document.getElementById("uptime")
     uptime = uptime + 1
