@@ -1,7 +1,7 @@
 // Settings Pages components
 const fxBtn = document.getElementById("fx-sound-switch")
 const lcCac = document.getElementById("clear-lc-cache")
-const audChk = localStorage.getItem("is-audio-muted")
+let audChk = localStorage.getItem("is-audio-muted")
 
 document.addEventListener("DOMContentLoaded", function() {
     // Verificação e correção do cache do som
@@ -9,9 +9,20 @@ document.addEventListener("DOMContentLoaded", function() {
         fxBtn.textContent = "Ativado"
     } else if (audChk == 1) {
         fxBtn.textContent = "Desativado"
+    } else if (audChk == 2) {
+        localStorage.setItem("is-audio-muted", 0)
+        fxBtn.textContent = "Ativado"
+        audChk = 0
     } else {
         localStorage.setItem("is-audio-muted", 0)
         fxBtn.textContent = "Ativado"
+    }
+
+    const usernameLocal = localStorage.getItem("username")
+    if (usernameLocal) {
+        lcCac.disabled = false
+    } else {
+        lcCac.disabled = true
     }
 
     // verificação do cache do nome do usuario
@@ -20,19 +31,24 @@ document.addEventListener("DOMContentLoaded", function() {
         nameInput.value = localStorage.getItem("username")
         nameInput.disabled = "true"
     } else {
+        const nameInput = document.getElementById("username-hold")
         // adicionar logica para a primeira visita
         nameInput.disabled = "true"
+        nameInput.value = "Inicie um jogo primeiro..."
     }
 })
 
 fxBtn.addEventListener("click", function() {
     if (audChk == 0) {
+        audChk = 1
         localStorage.setItem("is-audio-muted", 1)
         fxBtn.textContent = "Desativado"
     } else if (audChk == 1) {
+        audChk = 0
         localStorage.setItem("is-audio-muted", 0)
         fxBtn.textContent = "Ativado"
     } else {
+        audChk = 0
         localStorage.setItem("is-audio-muted", 0)
         fxBtn.textContent = "Ativado"
     }
@@ -40,11 +56,26 @@ fxBtn.addEventListener("click", function() {
 })
 
 lcCac.addEventListener("click", function() {
-    // logica simples,adicionar um clear pro local storage
-    const alerter = document.getElementById("alert-title-settings")
-    alerter.textContent = "Em desenvolvimento"
-    alerter.style.color = "red"
-    setTimeout(returnNormalTitleFrSettings, 3000)
+    const usernameLocal = localStorage.getItem("username")
+    if (usernameLocal) {
+        // logica simples,adicionar um clear pro local storage
+        const alerter = document.getElementById("alert-title-settings")
+        alerter.textContent = "Limpando dados..."
+        alerter.style.color = "red"
+
+        localStorage.clear()
+        setTimeout(() => {
+            location.reload(true)
+        }, 1000);
+        
+    } else {
+        // logica simples,adicionar um clear pro local storage
+        const alerter = document.getElementById("alert-title-settings")
+        alerter.textContent = "Não há jogo salvo"
+        alerter.style.color = "red"
+    }
+
+    
 })
 
 function returnToMainMenu() {

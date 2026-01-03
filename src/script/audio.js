@@ -1,6 +1,6 @@
 function audioCracking() {
     const audChk = localStorage.getItem("is-audio-muted")
-    if (audChk == 0) {
+    if (audChk == 0 || audChk == 2) {
         const efxCracking = new Audio("../src/wav/cracking.wav")
         efxCracking.currentTime = 0.2
         efxCracking.play()

@@ -9,7 +9,11 @@ document.addEventListener("DOMContentLoaded", function() {
         welcSession.textContent = `Bem vindo(a) de volta, ${usernameLocal}!`
         infoSession.textContent = `Seu ultimo jogo teve ${scoreLocal} cookies em ${timeLocal} segundos`
     } else {
-        localStorage.setItem("is-audio-muted", 0)
+        const audChk = localStorage.getItem("is-audio-muted")
+        if (!audChk) {
+            localStorage.setItem("is-audio-muted", 2)
+        }
+        
         lastSessionDiv.style.display = "none"
     }
     returnNormalTitle()
