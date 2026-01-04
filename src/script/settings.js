@@ -47,10 +47,12 @@ fxBtn.addEventListener("click", function() {
     } else if (audChk == 1) {
         audChk = 0
         localStorage.setItem("is-audio-muted", 0)
+        audioCracking()
         volCtrl.src = "../src/res/ico/volume-on.svg"
     } else {
         audChk = 0
         localStorage.setItem("is-audio-muted", 0)
+        audioCracking()
         volCtrl.src = "../src/res/ico/volume-on.svg"
     }
     // criar uma variavel armazenada em cache para transferir as outras paginas
@@ -64,6 +66,7 @@ lcCac.addEventListener("click", function() {
         alerter.textContent = "Limpando dados..."
         alerter.style.color = "red"
 
+        audioCracking()
         localStorage.clear()
         setTimeout(() => {
             location.reload(true)
