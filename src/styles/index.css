@@ -30,6 +30,13 @@ button:disabled {
   cursor: not-allowed;
 }
 
+.button-img-config{
+    filter: invert(1);
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
 .cont {
     display: flex;
     flex-direction: column;
@@ -107,6 +114,7 @@ button:disabled {
     margin: 8px;
     font-size: 18px;
     padding: 14px;
+    height: 70px;
     background-color: #2e2e2e;
     color: white;
     border: none;

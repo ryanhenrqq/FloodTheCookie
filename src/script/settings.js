@@ -1,21 +1,22 @@
 // Settings Pages components
 const fxBtn = document.getElementById("fx-sound-switch")
+const volCtrl = document.getElementById("volume-ctrl-config")
 const lcCac = document.getElementById("clear-lc-cache")
 let audChk = localStorage.getItem("is-audio-muted")
 
 document.addEventListener("DOMContentLoaded", function() {
     // Verificação e correção do cache do som
     if (audChk == 0) {
-        fxBtn.textContent = "Ativado"
+        volCtrl.src = "../src/res/ico/volume-on.svg"
     } else if (audChk == 1) {
-        fxBtn.textContent = "Desativado"
+        volCtrl.src = "../src/res/ico/volume-off.svg"
     } else if (audChk == 2) {
         localStorage.setItem("is-audio-muted", 0)
-        fxBtn.textContent = "Ativado"
+        volCtrl.src = "../src/res/ico/volume-on.svg"
         audChk = 0
     } else {
         localStorage.setItem("is-audio-muted", 0)
-        fxBtn.textContent = "Ativado"
+        volCtrl.src = "../src/res/ico/volume-on.svg"
     }
 
     const usernameLocal = localStorage.getItem("username")
@@ -42,15 +43,15 @@ fxBtn.addEventListener("click", function() {
     if (audChk == 0) {
         audChk = 1
         localStorage.setItem("is-audio-muted", 1)
-        fxBtn.textContent = "Desativado"
+        volCtrl.src = "../src/res/ico/volume-off.svg"
     } else if (audChk == 1) {
         audChk = 0
         localStorage.setItem("is-audio-muted", 0)
-        fxBtn.textContent = "Ativado"
+        volCtrl.src = "../src/res/ico/volume-on.svg"
     } else {
         audChk = 0
         localStorage.setItem("is-audio-muted", 0)
-        fxBtn.textContent = "Ativado"
+        volCtrl.src = "../src/res/ico/volume-on.svg"
     }
     // criar uma variavel armazenada em cache para transferir as outras paginas
 })
