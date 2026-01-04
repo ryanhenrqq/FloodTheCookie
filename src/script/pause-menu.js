@@ -18,6 +18,9 @@ function removePopupMenu() {
     } else if (window.msRequestFullScreen){
         window.msRequestFullScreen()
     }
+    setTimeout(() => {
+        backgroundLofi()
+    }, 1000);
     if (document.getElementById("start-btn").textContent == "Iniciar"){
         document.getElementById("start-btn").innerHTML = '<img src="../src/res/ico/play.svg" alt="Play" class="side-small-btn">Continuar'
     }
@@ -64,8 +67,5 @@ exitBtn.addEventListener("click", function() { window.location.href = "../index.
 const welcomeMenu = document.getElementById("welcome-popup")
 const welcomeStart = document.getElementById("welcome-start-btn")
 welcomeStart.addEventListener("click", function() {
-    setTimeout(() => {
-        backgroundLofi()
-    }, 1000);
     welcomeMenu.style.display = "none"
 })
