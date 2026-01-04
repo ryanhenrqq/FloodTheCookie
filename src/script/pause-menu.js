@@ -64,5 +64,8 @@ exitBtn.addEventListener("click", function() { window.location.href = "../index.
 const welcomeMenu = document.getElementById("welcome-popup")
 const welcomeStart = document.getElementById("welcome-start-btn")
 welcomeStart.addEventListener("click", function() {
+    setTimeout(() => {
+        backgroundLofi()
+    }, 1000);
     welcomeMenu.style.display = "none"
 })
