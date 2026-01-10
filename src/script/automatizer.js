@@ -79,6 +79,14 @@ function automatizedClicks() {
             } else {
                 pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000000))} Bilhões`
             }
+        } else if (points < 1000000000000000) {
+            if (points >= 100000000000 && points < 2000000000000) {
+                pointsText.textContent = `${(Number(points) /Number(1000000000000)).toFixed(1)} Trilhão`
+            } else if (points >= 2000000000000 && points < 10000000000000) {
+                pointsText.textContent = `${(Number(points) /Number(1000000000000)).toFixed(1)} Trilhões`
+            } else {
+                pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000000000))} Trilhões`
+            }
         }
         audioCracking()
         if (points > minimum1Points) {
