@@ -24,6 +24,7 @@ function audioHit() {
     }
     
 }
+/*
 function backgroundLofi() {
     const audChk = localStorage.getItem("is-audio-muted")
     if (audChk == 0) {
@@ -38,3 +39,4 @@ function backgroundLofi() {
     }
     
 }
+    */

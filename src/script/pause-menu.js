@@ -19,7 +19,7 @@ function removePopupMenu() {
         window.msRequestFullScreen()
     }
     setTimeout(() => {
-        backgroundLofi()
+        // backgroundLofi()
     }, 1000);
     if (document.getElementById("start-btn").textContent == "Iniciar"){
         document.getElementById("start-btn").innerHTML = '<img src="../src/res/ico/play.svg" alt="Play" class="side-small-btn">Continuar'
