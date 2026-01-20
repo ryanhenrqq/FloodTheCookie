@@ -45,6 +45,10 @@ function automatize1() {
     localStorage.setItem("last-game-automultiplierlvl", autoMultiplierLvl)
     localStorage.setItem("last-game-minimumauto1points", minimumAuto1Points)
 
+    if (autoMultiplierLvl == 2 || autoMultiplierLvl == 5 || autoMultiplierLvl == 7 || autoMultiplierLvl == 10) {
+        powerUpTriple(10000)
+    }
+
     automatize1btn.disabled = true
     automatize1.textContent = `Necessario ${minimumAuto1Points} Cookies`
     automultInfoText.textContent = `Nivel ${autoMultiplierLvl}`
@@ -100,6 +104,22 @@ function automatizedClicks() {
             automatize1btn.disabled = true
         }
     }
+}
+function powerUpTriple(millisecs) {
+    const usernameCstEntry = document.getElementById("username-custom-entry")
+    const backup = usernameCstEntry.textContent
+    usernameCstEntry.textContent = "Ganho Automatico 4x"
+    usernameCstEntry.style.color = "red"
+    const automatize1btn = document.getElementById("auto1-btn0")
+    autoMultiplier = autoMultiplier * 4
+    automatize1btn.disabled = true
+    setTimeout(() => {
+        const usernameCstEntry = document.getElementById("username-custom-entry")
+        usernameCstEntry.style.color = "white"
+        usernameCstEntry.textContent = backup
+        autoMultiplier = autoMultiplier / 4
+        automatize1btn.disabled = false
+    }, millisecs)
 }
 function bugReporterForAutomatized() {
     let points = localStorage.getItem("last-game-points")
