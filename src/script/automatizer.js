@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 function automatize1() {
+    if (points > 999999999999999) {
+        return
+    }
     if (navigator.vibrate) {
         navigator.vibrate(700)
     }
