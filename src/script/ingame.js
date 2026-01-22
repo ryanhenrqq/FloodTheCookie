@@ -81,6 +81,12 @@ function uptimeSetter() {
         alert("Bug encontrado!")
         window.location.replace("../index.html")
     }
+    if (points > 999000000000000) {
+        if (confirm("Parabens, você atingiu o limite maximo do jogo no momento.")) {
+            localStorage.setItem("continue-last-game", null)
+            window.location.replace("../index.html")
+        }
+    }
     if (points < minimum1Points && multiplier1.disabled == false) {
         /* Corrigir posteriormente */
         multiplier1.disabled = true
