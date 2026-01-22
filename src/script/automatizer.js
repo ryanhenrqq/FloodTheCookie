@@ -109,14 +109,20 @@ function automatizedClicks() {
     }
 }
 function powerUpTriple(millisecs) {
+    if (navigator.vibrate) {
+        navigator.vibrate(700)
+    }
     const usernameCstEntry = document.getElementById("username-custom-entry")
     const backup = usernameCstEntry.textContent
-    usernameCstEntry.textContent = "Ganho Automatico 4x"
+    usernameCstEntry.textContent = `Ganho Automatico 4x por ${millisecs / 1000}s`
     usernameCstEntry.style.color = "red"
     const automatize1btn = document.getElementById("auto1-btn0")
     autoMultiplier = autoMultiplier * 4
     automatize1btn.disabled = true
     setTimeout(() => {
+        if (navigator.vibrate) {
+            navigator.vibrate(700)
+        }
         const usernameCstEntry = document.getElementById("username-custom-entry")
         usernameCstEntry.style.color = "white"
         usernameCstEntry.textContent = backup
