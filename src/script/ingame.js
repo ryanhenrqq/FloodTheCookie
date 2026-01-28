@@ -8,7 +8,7 @@ const rightHeadSpan = document.getElementById("all-right-span")
 let points = 0
 let multiplier = 1
 let multiplierLvl = 1
-let minimum1Points = 15
+let minimum1Points = 30
 let greenWaitTimer = 0
 
 let uptime = 0
@@ -30,6 +30,23 @@ function makePointsGreen(milisecs) {
 }
 function normalizePointColor() {
     pointsText.style.color = "white"
+}
+function truncNumbers(points) {
+    if (points < 10000) {
+        return points
+    } else if (points < 1000000) {
+        return `${Math.trunc(Number(points) /Number(1000))} Mil`
+    } else if (points < 1000000000) {
+        return `${(Number(points) /Number(1000000)).toFixed(1)} Mi`
+    } else if (points < 1000000000000) {
+        return `${(Number(points) /Number(1000000000)).toFixed(1)} B`
+    } else if (points < 1000000000000000) {
+        return `${(Number(points) /Number(1000000000000)).toFixed(1)} T`
+    } else if (points < 9000000000000000) {
+        return `${(Number(points) /Number(1000000000000000)).toFixed(1)} Q`
+    } else {
+        return "∞"
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -97,7 +114,9 @@ function uptimeSetter() {
     }
 }
 cookie.addEventListener("click", function(e){
-    if (points > 999999999999999) {
+    if (points > 9000000000000000) {
+        this.style.filter = "saturate(0)"
+        this.style.pointerEvents = "none"
         return
     }
     if (navigator.vibrate) {
@@ -108,35 +127,7 @@ cookie.addEventListener("click", function(e){
     const automatize1 = document.getElementById("auto1-btn0")
     localStorage.setItem("score", points)
     points = points + multiplier
-    if (points < 10000) {
-        pointsText.textContent = points
-    } else if (points < 1000000) {
-        pointsText.textContent = `${Math.trunc(Number(points) /Number(1000))} Mil`
-    } else if (points < 1000000000) {
-        if (points >= 1000000 && points < 2000000) {
-            pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhão`
-        } else if (points >= 2000000 && points < 10000000) {
-            pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhões`
-        } else {
-            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Milhões`
-        }
-    } else if (points < 1000000000000) {
-        if (points >= 1000000000 && points < 2000000000) {
-            pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhão`
-        } else if (points >= 2000000000 && points < 10000000000) {
-            pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhões`
-        } else {
-            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000000))} Bilhões`
-        }
-    } else if (points < 1000000000000000) {
-        if (points >= 100000000000 && points < 2000000000000) {
-            pointsText.textContent = `${(Number(points) /Number(1000000000000)).toFixed(1)} Trilhão`
-        } else if (points >= 2000000000000 && points < 10000000000000) {
-            pointsText.textContent = `${(Number(points) /Number(1000000000000)).toFixed(1)} Trilhões`
-        } else {
-            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000000000))} Trilhões`
-        }
-    }
+    pointsText.textContent = truncNumbers(points)
     audioCracking()
     if (points >= minimum1Points) {
         multiplier1.disabled = false
@@ -148,6 +139,9 @@ cookie.addEventListener("click", function(e){
 function multiplier1() {
     if (navigator.vibrate) {
         navigator.vibrate(700)
+    }
+    if (points > 9000000000000000) {
+        return
     }
     audioHit()
     makePointsRed(250)
@@ -161,7 +155,7 @@ function multiplier1() {
 
     points = points - minimum1Points
     multiplier = multiplier + multiplier
-    minimum1Points = Math.round(minimum1Points * 2.2)
+    minimum1Points = Math.round(minimum1Points * 2.8)
     multiplierLvl = multiplierLvl + 1
 
     pointsText.textContent = points

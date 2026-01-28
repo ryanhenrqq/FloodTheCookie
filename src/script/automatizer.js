@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 function automatize1() {
-    if (points > 999999999999999) {
+    if (points > 9000000000000000) {
         return
     }
     if (navigator.vibrate) {
@@ -56,45 +56,39 @@ function automatize1() {
     automatize1.textContent = `Necessario ${minimumAuto1Points} Cookies`
     automultInfoText.textContent = `Nivel ${autoMultiplierLvl}`
 }
-
+function truncNumbers(points) {
+    if (points < 10000) {
+        return points
+    } else if (points < 1000000) {
+        return `${Math.trunc(Number(points) /Number(1000))} Mil`
+    } else if (points < 1000000000) {
+        return `${(Number(points) /Number(1000000)).toFixed(1)} Mi`
+    } else if (points < 1000000000000) {
+        return `${(Number(points) /Number(1000000000)).toFixed(1)} B`
+    } else if (points < 1000000000000000) {
+        return `${(Number(points) /Number(1000000000000)).toFixed(1)} T`
+    } else if (points < 9000000000000000) {
+        return `${(Number(points) /Number(1000000000000000)).toFixed(1)} Q`
+    } else {
+        return "∞"
+    }
+}
 function automatizedClicks() {
     const multiplier1btn = document.getElementById("mult1-btn0")
     const automatize1btn = document.getElementById("auto1-btn0")
     if (autoMultiplier == 0) {
         return
     } else {
+            if (points > 9000000000000000) {
+                const cookie = document.getElementById("cookie")
+                cookie.style.filter = "saturate(0)"
+                cookie.style.pointerEvents = "none"
+                return
+            }
         makePointsGreen(250)
         localStorage.setItem("last-game-points", points)
         points = Math.trunc(points + (autoMultiplier/Number(automatiIntSlash)))
-        if (points < 10000) {
-            pointsText.textContent = points
-        } else if (points < 1000000) {
-            pointsText.textContent = `${Math.trunc(Number(points) /Number(1000))} Mil`
-        } else if (points < 1000000000) {
-            if (points >= 1000000 && points < 2000000) {
-                pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhão`
-            } else if (points >= 2000000 && points < 10000000) {
-                pointsText.textContent = `${(Number(points) /Number(1000000)).toFixed(1)} Milhões`
-            } else {
-                pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000))} Milhões`
-            }
-        } else if (points < 1000000000000) {
-            if (points >= 1000000000 && points < 2000000000) {
-                pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhão`
-            } else if (points >= 2000000000 && points < 10000000000) {
-                pointsText.textContent = `${(Number(points) /Number(1000000000)).toFixed(1)} Bilhões`
-            } else {
-                pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000000))} Bilhões`
-            }
-        } else if (points < 1000000000000000) {
-            if (points >= 100000000000 && points < 2000000000000) {
-                pointsText.textContent = `${(Number(points) /Number(1000000000000)).toFixed(1)} Trilhão`
-            } else if (points >= 2000000000000 && points < 10000000000000) {
-                pointsText.textContent = `${(Number(points) /Number(1000000000000)).toFixed(1)} Trilhões`
-            } else {
-                pointsText.textContent = `${Math.trunc(Number(points) /Number(1000000000000))} Trilhões`
-            }
-        }
+        pointsText.textContent = truncNumbers(points)
         audioCracking()
         if (points > minimum1Points) {
             multiplier1btn.disabled = false
