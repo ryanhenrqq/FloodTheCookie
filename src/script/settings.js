@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const nameInput = document.getElementById("username-hold")
         // adicionar logica para a primeira visita
         nameInput.disabled = "true"
-        nameInput.value = "Inicie um jogo primeiro..."
+        nameInput.value = "Start a new game before..."
     }
 })
 
@@ -63,7 +63,7 @@ lcCac.addEventListener("click", function() {
     if (usernameLocal) {
         // logica simples,adicionar um clear pro local storage
         const alerter = document.getElementById("alert-title-settings")
-        alerter.textContent = "Limpando dados..."
+        alerter.textContent = "Erasing..."
         alerter.style.color = "red"
 
         audioCracking()
@@ -75,7 +75,7 @@ lcCac.addEventListener("click", function() {
     } else {
         // logica simples,adicionar um clear pro local storage
         const alerter = document.getElementById("alert-title-settings")
-        alerter.textContent = "Não há jogo salvo"
+        alerter.textContent = "There is no game saved"
         alerter.style.color = "red"
     }
 
@@ -92,6 +92,6 @@ function returnToMainMenu() {
 
 function returnNormalTitleFrSettings() {
     const alerter = document.getElementById("alert-title-settings")
-    alerter.textContent = "Configurações"
+    alerter.textContent = "Settings"
     alerter.style.color = "black"
 }

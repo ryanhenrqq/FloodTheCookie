@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
     if (usernameLocal) {
         const welcSession = document.getElementById("welcome-session")
         const infoSession = document.getElementById("info-session")
-        welcSession.textContent = `Bem vindo(a) de volta, ${usernameLocal}!`
-        infoSession.textContent = `Seu ultimo jogo teve ${scoreLocal} cookies em ${timeLocal} segundos`
+        welcSession.textContent = `Welcome back, ${usernameLocal}!`
+        infoSession.textContent = `Your last game had ${scoreLocal} cookies in ${timeLocal} seconds`
     } else {
         const audChk = localStorage.getItem("is-audio-muted")
         if (!audChk) {
@@ -38,7 +38,7 @@ function continueGm() {
             navigator.vibrate(500)
         }
         const alerter = document.getElementById("alert-title")
-        alerter.textContent = "Não há jogo salvo!"
+        alerter.textContent = "There is no game saved"
         alerter.style.color = "red"
         setTimeout(returnNormalTitle, 3000)
     }

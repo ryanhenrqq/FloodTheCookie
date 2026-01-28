@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,28 +12,27 @@
     <div>
         <div class="cont">
             <h1 id="alert-title" class="fill-width space-between-bottom">
-                <button onclick="returnToMainMenu()">Voltar</button>
-                <p id="alert-title-settings">Configurações</p>
+                <button onclick="returnToMainMenu()">Back</button>
+                <p id="alert-title-settings">Settings</p>
             </h1>
             <div class="flex-col fill-width">
                 <div class="flex-hor-centered fill-width">
-                    <b>Nome:</b>
+                    <b>Name:</b>
                     <input type="text" id="username-hold" class="input-layout-big fill-width" disabled>
                 </div>
                 <div class="flex-hor-centered fill-width">
-                    <b>Musica/FX:</b>
+                    <b>Music & SFX:</b>
                     <button class="fill-width" id="fx-sound-switch"><img src="../src/res/ico/volume-on.svg" alt="Volume" id="volume-ctrl-config" class="button-img-config"></button>
                 </div>
                 <div class="flex-hor-centered fill-width">
-                    <b>Limpar dados:</b>
-                    <button class="fill-width" id="clear-lc-cache">Limpar</button>
+                    <b>Erase data:</b>
+                    <button class="fill-width" id="clear-lc-cache">Erase Now</button>
                 </div>
                 
             </div>
         </div>
-        <footer><i style="color: white;">("Flood the Cookie" é uma inspiração simplificada de <a href="https://store.steampowered.com/app/1454400/Cookie_Clicker/">Cookie Clicker</a> disponível na Steam, sem intenção nenhuma de lucro)</i></footer>
+        <footer><i style="color: white;">("Flood the Cookie" is a simple inspiration of <a href="https://store.steampowered.com/app/1454400/Cookie_Clicker/">Cookie Clicker</a> available on Steam, without earning intents)</i></footer>
     </div>
-    <!-- Revisar scripts necessarios pra essa pagina -->
     <script src="../src/script/audio.js"></script>
     <script src="../src/script/settings.js"></script>
 </body>
