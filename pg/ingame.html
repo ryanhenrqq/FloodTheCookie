@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -22,13 +22,13 @@
         </header>
         <header class="menu-header" id="menu-header-pause" style="display: flex;">
             <div class="left-head-menu" id="logo-button">
-                <button id="start-btn"  class="side-small-btn-menu-head"><img src="../src/res/ico/play.svg" alt="Play" class="side-small-btn">Iniciar</button>
-                <button id="restart-btn"  class="side-small-btn-menu-head"><img src="../src/res/ico/restart.svg" alt="Restart" class="side-small-btn">Reiniciar</button>
-                <button id="exit-btn" class="side-small-btn-menu-head"><img src="../src/res/ico/exit.svg" alt="" class="side-small-btn">Sair</button>
+                <button id="start-btn"  class="side-small-btn-menu-head"><img src="../src/res/ico/play.svg" alt="Play" class="side-small-btn">Start</button>
+                <button id="restart-btn"  class="side-small-btn-menu-head"><img src="../src/res/ico/restart.svg" alt="Restart" class="side-small-btn">Restart</button>
+                <button id="exit-btn" class="side-small-btn-menu-head"><img src="../src/res/ico/exit.svg" alt="" class="side-small-btn">Leave</button>
             </div>
             <div class="right-head-menu" id="all-right-span">
                 <div class="bold-head-menu">
-                    <b id="uptime">Jogando por 0 Segundos</b>
+                    <b id="uptime">Playing for 0 seconds</b>
                     <b>GitHub: ryanhenrqq</b> 
                 </div>
                 <img src="../src/res/ico/cookie.png" alt="Cookie Indicator" class="cookie-indicator">
@@ -37,7 +37,7 @@
         <main id="main-content-blocking">
             <div class="infosplayer">
                 <img src="../src/res/ico/bakery.png" alt="Padaria" class="auxiliary-btn-icons">
-                <b id="username-custom-entry">Padaria de </b>
+                <b id="username-custom-entry">'s bakery</b>
             </div>
             
             <div class="cookie-parent">
@@ -46,25 +46,25 @@
             
             <div class="aside-bar" id="aside-bar">
                 <div class="cont">
-                    <h3 class="cont-titles">Impulsionadores</h3>
+                    <h3 class="cont-titles">Boosters</h3>
                     <div class="flex-ver">
-                        <button id="mult1-btn0" onclick="multiplier1()" class="cont-buttons"><img src="../src/res/ico/hand-pointer.png" alt="Pointer" class="auxiliary-btn-icons"><b id="mult1-btn">Multiplicador x2</b></button>
+                        <button id="mult1-btn0" onclick="multiplier1()" class="cont-buttons"><img src="../src/res/ico/hand-pointer.png" alt="Pointer" class="auxiliary-btn-icons"><b id="mult1-btn">ClickBooster</b></button>
                         <div id="price-mult1" class="infos">0 cookies</div>
-                        <div class="infos" id="multiplier-info">Nivel 1</div>
+                        <div class="infos" id="multiplier-info">Level 1</div>
                     </div>
                 </div>
                 <div class="industries-cont cont" id="industries-cont">
-                    <h3 class="cont-titles">Fabricas</h3>
+                    <h3 class="cont-titles">Factories</h3>
                     <div class="flex-ver">
-                        <button disabled id="auto1-btn0" onclick="automatize1()" class="cont-buttons"><img src="../src/res/ico/industry.png" alt="Pointer" class="auxiliary-btn-icons"><b id="auto1-btn">Multiplicador x2</b></button>
+                        <button disabled id="auto1-btn0" onclick="automatize1()" class="cont-buttons"><img src="../src/res/ico/industry.png" alt="Pointer" class="auxiliary-btn-icons"><b id="auto1-btn">Production Line</b></button>
                         <div id="price-auto1" class="infos">0 cookies</div>
-                        <div class="infos" id="auto-multiplier-info">Não Automatizado</div>
+                        <div class="infos" id="auto-multiplier-info">Not Active</div>
                     </div>
                     
                 </div>
                 <!-- 
                 
-                Testando a nova posiçao das infos do multiplicador e automatizador
+                Testing the new position of the container
 
                 <div class="bottom-cont">
                     
@@ -73,10 +73,10 @@
                 -->
             </div>
         </main>
-        <footer><i style="color: white;">("Flood the Cookie" é uma inspiração simplificada de <a href="https://store.steampowered.com/app/1454400/Cookie_Clicker/">Cookie Clicker</a> disponível na Steam, sem intenção nenhuma de lucro)</i></footer>
+        <footer><i style="color: white;">("Flood the Cookie" is a simple inspiration of <a href="https://store.steampowered.com/app/1454400/Cookie_Clicker/">Cookie Clicker</a> available on Steam, without earning intents)</i></footer>
     </div>
     <!-- 
-        CODIGO LEGADO DO POPUP: BACKUP
+        LEGACY POPUP CODE: BACKUP
     
     <div class="popup" id="popup-pause">
         <b>Menu - Flood The Cookie!</b> 
@@ -88,10 +88,9 @@
     </div>-->
     <div class="welcomePopup" id="welcome-popup">
         <img src="../src/res/ico/cookie.png" alt="Cookie Welcome">
-        <b>Bem vindo ao cookie Clicker</b>
-        <p>O seu principal objetivo aqui é clicar no cookie, em troca de mais cookies. Quanto mais você tiver, mais poderes pode ter para multiplicar os seus ganhos.</p>
-        <p>Aproveite a gameplay junto de um lo-fi de fundo!</p>
-        <p>(o lo-fi só sera reproduzido se os efeitos sonoros estiverem ativos)</p>
+        <b>Welcome to FloodTheCookie!</b>
+        <p>Your goal here is to simply click the cookie, to get more cookies. The more you get, you will be more capable to buy the upgrades for your bakery.</p>
+        <p>Enjoy it</p>
         <button id="welcome-start-btn"><img src="../src/res/ico/play.svg" alt="Play"></button>
     </div>
     <div id="effectMouse"><img src="../src/res/fav/favicon.png" alt="Cookie Effect" draggable="false"></div>
