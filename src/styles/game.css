@@ -454,6 +454,9 @@ footer a{
         font-size: 34px;
         margin-left: 12px;
     }
+    #username-custom-entry {
+        font-size: 18px;
+    }
     .popup {
         left: 15%;
         right: 15%;
@@ -471,10 +474,19 @@ footer a{
         position: fixed;
         right: auto;
         top: auto;
-        bottom: 45px;
+        bottom: 12px;
+    }
+    .cont-titles {
+        display: none;
+    }
+    #mult1-btn, #auto1-btn0 {
+        font-size: 12pxpx;
     }
     .infos {
-        font-size: 23px;
+        font-size: 12px;
+    }
+    footer {
+        display: none;
     }
 }
 @media (max-width: 540px) {
