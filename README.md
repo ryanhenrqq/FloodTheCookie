@@ -1,25 +1,23 @@
 # 🍪 FloodTheCookie
 
-- **Flood the Cookie** é um jogo do tipo Click-to-Earn, com um foco grande no script. 
+- **Flood the Cookie** It's a click-to-earn game with a strong focus on the script.
 
-- Em resumo, essa é uma recriação um jogo famoso de clicar em um cookie para ganhar pontos, só que usando linguagem de programação de sites, feito pra ser um otimo passa-tempo e uma noção basica de logica e design de game creation.
+- In short, this is a recreation of a famous game where you click on a cookie to earn points, but using website-directed language, designed to be a great passtime and a basic understanding of logic and game design.
 
-- ⚠️ **Flood the Cookie é uma inspiração simplificada de Cookie Clicker disponível na Steam, sem intenção nenhuma de lucro.**
-
-- **aviso extra: o jogo está ainda em suas primeiras versoes, estou adaptando e tendo ideias novas de design.**
+- ⚠️ **Flood the Cookie is a simplified version of Cookie Clicker, available on Steam, with no intention of making a profit.**
 
 ---
 
-## 🎯 Funcionalidades & Objetivo
+## 🎯 Functionalities and Goal
 
-- O usuario inicia na tela de escolha (index.html), pra decidir se inicia um novo jogo ou continua o jogo anterior.
+- The user starts on the selection screen (index.html), to decide whether to start a new game or continue the previous one.
 
-- Ao iniciar um novo jogo, ele é jogado pro menu inicial do game (tambem sendo o mesmo menu de pausa), com 3 botões principais auto-explicativos: Iniciar, Reiniciar e Sair.
+- When starting a new game, it takes you to the game's main menu (which is also the same menu for pausing), with 3 main buttons: Start, Restart, and Leave.
 
-- Ao iniciar um novo jogo, o browser do usuário muda pra tela cheia (full screen intent), surge um cabeçalho em preto com os seguintes itens: Menu/Pausa, Nome do Jogo e Pountuação atual. No elemento central da tela (com a cor de fundo azul-escuro) tem um Cookie girando constantemente no sentido horário, e abaixo há um menu na cor branca com 2 botões: Multiplier x2 (x pontos) & Automatized 2cp/s (y pontos) ->
+- When starting a new game, the user's browser switches to full screen intent, and a black header appears with the following items: Menu/Pause, Game Name, and Current Score. In the center of the screen (with a dark blue background) there is a cookie constantly spinning clockwise, and below it is a white menu with two buttons: ClickBooster (x points) & ProductionLine (y points). ->
 
-- o multiplier (multiplicador) é uma espécie de poder dos cliques: por padrao, o clique do usuário pode obter apenas 1 ponto por clique. Ao comprar o multiplier, o clique do usuário irá valer 2 vezes mais. Ex.: 1 clique começa a equivaler a 2 cliques, fazendo assim 2 pontos por segundos.
+- The ClickPower is a kind of powerup: by default, a user's click can only earn 1 point per click. By purchasing the multiplier, the user's click will be worth twice as much. For example: 1 click starts to be equivalent to 2 clicks, earning 2 points per second.
 
-- o automatize (automatizar) é um clique sem interação do usuário: por padrão, o jogador inicia sem nenhum clique automatizado, necessitando uma quantidade y de pontos para liberá-lo. Após ter liberado essa função, o usuário pode ir evoluindo ela de forma similar ao multiplicador. Ex.: 1cp/s equivale a 1 clique por segundo, e ao comprar o automatized, o clique por segundo irá multiplicar, passando a ser 2 cliques por segundo (2 cp/s).
+- ProductionLine is a click without user interaction: by default, the player starts without any ProductionLine, requiring a certain number of points (y) to unlock it. After unlocking this function, the user can upgrade it similarly to a ClickPower. For example: 1 cp/s equals 1 click per second, and by purchasing ProductionLine, the clicks per second will multiply, becoming 2 clicks per second (2 cp/s).
 
-- Por referencia, há uma indicação do valor atual do Multiplier e do Automatized, abaixo do menu de compra.
+- For reference, the current value of the Multiplier and Automated settings is indicated below the purchase menu.
