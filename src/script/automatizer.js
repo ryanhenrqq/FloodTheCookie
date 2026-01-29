@@ -14,12 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
         autoMultiplier = Number(localStorage.getItem("last-game-automultiplier"))
         autoMultiplier = Number(localStorage.getItem("last-game-automultiplierlvl"))
         minimumAuto1Points = Number(localStorage.getItem("last-game-minimumauto1points"))
-        automatize1.textContent = `Necessario ${minimumAuto1Points} Cookies`
-        automultInfoText.textContent = `Nivel ${autoMultiplierLvl}`
+        automatize1.textContent = `Needs ${minimumAuto1Points} Cookies`
+        automultInfoText.textContent = `Level ${autoMultiplierLvl}`
     } else {
         automatize1.disabled = true
-        automatize1.textContent = `Necessario ${minimumAuto1Points} Cookies`
-        automultInfoText.textContent = `Nivel ${autoMultiplierLvl}`
+        automatize1.textContent = `Needs ${minimumAuto1Points} Cookies`
+        automultInfoText.textContent = `Level ${autoMultiplierLvl}`
     }
 })
 
@@ -53,16 +53,16 @@ function automatize1() {
     }
 
     automatize1btn.disabled = true
-    automatize1.textContent = `Necessario ${minimumAuto1Points} Cookies`
-    automultInfoText.textContent = `Nivel ${autoMultiplierLvl}`
+    automatize1.textContent = `Needs ${minimumAuto1Points} Cookies`
+    automultInfoText.textContent = `Level ${autoMultiplierLvl}`
 }
 function truncNumbers(points) {
     if (points < 10000) {
         return points
     } else if (points < 1000000) {
-        return `${Math.trunc(Number(points) /Number(1000))} Mil`
+        return `${Math.trunc(Number(points) /Number(1000))}K`
     } else if (points < 1000000000) {
-        return `${(Number(points) /Number(1000000)).toFixed(1)} Mi`
+        return `${(Number(points) /Number(1000000)).toFixed(1)} M`
     } else if (points < 1000000000000) {
         return `${(Number(points) /Number(1000000000)).toFixed(1)} B`
     } else if (points < 1000000000000000) {
@@ -108,7 +108,7 @@ function powerUpTriple(millisecs) {
     }
     const usernameCstEntry = document.getElementById("username-custom-entry")
     const backup = usernameCstEntry.textContent
-    usernameCstEntry.textContent = `Ganho Automatico 4x por ${millisecs / 1000}s`
+    usernameCstEntry.textContent = `PowerUP X4 for ${millisecs / 1000}s`
     usernameCstEntry.style.color = "red"
     const automatize1btn = document.getElementById("auto1-btn0")
     autoMultiplier = autoMultiplier * 4
@@ -127,7 +127,7 @@ function powerUpTriple(millisecs) {
 function bugReporterForAutomatized() {
     let points = localStorage.getItem("last-game-points")
     const automatize1 = document.getElementById("auto1-btn")
-    /* Corrigir posteriormente *//*
+    /* Check it later *//*
     if (points < minimum1Points && automatize1.disabled == false) {
         automatize1.disabled = true
         console.log("automatizer.js: fixed button for automatizer (points lower than the minimum requirement)")

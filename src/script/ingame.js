@@ -35,9 +35,9 @@ function truncNumbers(points) {
     if (points < 10000) {
         return points
     } else if (points < 1000000) {
-        return `${Math.trunc(Number(points) /Number(1000))} Mil`
+        return `${Math.trunc(Number(points) /Number(1000))}K`
     } else if (points < 1000000000) {
-        return `${(Number(points) /Number(1000000)).toFixed(1)} Mi`
+        return `${(Number(points) /Number(1000000)).toFixed(1)} M`
     } else if (points < 1000000000000) {
         return `${(Number(points) /Number(1000000000)).toFixed(1)} B`
     } else if (points < 1000000000000000) {
@@ -54,9 +54,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const multiplier1btn = document.getElementById("mult1-btn0")
     const usernameCstEntry = document.getElementById("username-custom-entry")
     if (!localStorage.getItem("username")) {
-        usernameCstEntry.textContent = "Padaria de Usuário"
+        usernameCstEntry.textContent = "My bakery"
     } else {
-        usernameCstEntry.textContent = `Padaria de ${localStorage.getItem("username")}`
+        usernameCstEntry.textContent = `${localStorage.getItem("username")}'s Bakery`
     }
     
     if (localStorage.getItem("continue-last-game")) {
@@ -68,8 +68,8 @@ document.addEventListener("DOMContentLoaded", function() {
         minimum1Points = Number(localStorage.getItem("last-game-minimum1points"))
         uptime = Number(localStorage.getItem("last-game-uptime"))
         industrieUnlocked = false
-        multiplier1.textContent = `Necessario ${minimum1Points} Cookies`
-        multInfoText.textContent = `Nivel ${multiplierLvl}`
+        multiplier1.textContent = `Needs ${minimum1Points} Cookies`
+        multInfoText.textContent = `Level ${multiplierLvl}`
     } else {
         localStorage.setItem("last-game-points", 0)
         localStorage.setItem("last-game-multiplier", 0)
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("last-game-uptime", 0)
         localStorage.setItem("last-game-unlockIndustry", false)
         multiplier1btn.disabled = true
-        multiplier1.textContent = `Para começar, junte ${minimum1Points} Cookies`
+        multiplier1.textContent = `Needs ${minimum1Points} Cookies`
     }
 })
 
@@ -95,7 +95,7 @@ function uptimeSetter() {
     /* Some Precautions */
     if (points < 0) {
         localStorage.clear("continue-last-game")
-        alert("Bug encontrado!")
+        alert("Bug found, closing game! Sorry for the inconvinience.")
         window.location.replace("../index.html")
     }
     if (points < minimum1Points && multiplier1.disabled == false) {
@@ -106,10 +106,10 @@ function uptimeSetter() {
 
     /* Final Function */
     if (uptime < 60) {
-        textShown = `Jogando por ${uptime} Segundos`
+        textShown = `Playing for ${uptime} seconds`
         elementTime.textContent = textShown
     } else {
-        textShown = `Jogando por ${Math.trunc(Number(uptime)/60)} Minutos`
+        textShown = `Playing for ${Math.trunc(Number(uptime)/60)} Minutes`
         elementTime.textContent = textShown
     }
 }
@@ -164,8 +164,8 @@ function multiplier1() {
     localStorage.setItem("last-game-multiplierlvl", multiplierLvl)
     
     multiplier1btn.disabled = true
-    multiplier1.textContent = `Necessario ${minimum1Points} Cookies`
-    multInfoText.textContent = `Nivel ${multiplierLvl}`
+    multiplier1.textContent = `Needs ${minimum1Points} Cookies`
+    multInfoText.textContent = `Level ${multiplierLvl}`
 }
 
 document.addEventListener('contextmenu', function(e) {
