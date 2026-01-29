@@ -19,7 +19,7 @@ function goOn() {
 }
 function returnNormalTitle() {
     const alerter = document.getElementById("alert-title")
-    alerter.textContent = "Qual seu nome?"
+    alerter.textContent = "What's your Name?"
     alerter.style.color = "black"
 }
 function verifyInput() {
@@ -29,7 +29,7 @@ function verifyInput() {
             navigator.vibrate(700)
         }
         const alerter = document.getElementById("alert-title")
-        alerter.textContent = "Campo do nome vazio"
+        alerter.textContent = "Name Field Empty"
         alerter.style.color = "red"
         setTimeout(returnNormalTitle, 3000)
         return
@@ -39,7 +39,7 @@ function verifyInput() {
                 navigator.vibrate(700)
             }
             const alerter = document.getElementById("alert-title")
-            alerter.textContent = "Nome muito grande"
+            alerter.textContent = "Too big name"
             alerter.style.color = "red"
             setTimeout(returnNormalTitle, 3000)
             return
@@ -48,7 +48,7 @@ function verifyInput() {
                 navigator.vibrate(700)
             }
             const alerter = document.getElementById("alert-title")
-            alerter.textContent = "Nome muito pequeno"
+            alerter.textContent = "Too short name"
             alerter.style.color = "red"
             setTimeout(returnNormalTitle, 3000)
             return

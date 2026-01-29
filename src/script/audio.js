@@ -4,11 +4,10 @@ function audioCracking() {
         const efxCracking = new Audio("../src/wav/cracking.wav")
         efxCracking.currentTime = 0.2
         efxCracking.play()
-        console.log("som reproduzido")
     } else if (audChk == 1) {
-        console.log("mutado")
+        // nothing
     } else {
-        console.error("AudChk está quebrado: ", audChk)
+        console.error("AudChk broken: ", audChk)
     }
 }
 function audioHit() {
@@ -16,11 +15,10 @@ function audioHit() {
     if (audChk == 0) {
         const efxHit = new Audio("../src/wav/windshield-hit.wav")
         efxHit.play()
-        console.log("som reproduzido")
     } else if (audChk == 1) {
-        console.log("mutado")
+        // nothing
     } else {
-        console.error("AudChk está quebrado: ", audChk)
+        console.error("AudChk broken: ", audChk)
     }
     
 }

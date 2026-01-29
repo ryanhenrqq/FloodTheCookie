@@ -54,11 +54,11 @@ restartBtn.addEventListener("click", function(){
     autoMultiplierLvl = 0
     multiplier1.disabled = true
     automatize1.disabled = true
-    multiplier2.textContent = `Necessario ${minimum1Points} Cookies`
-    automatize2.textContent = `Necessario ${minimumAuto1Points} Cookies`
+    multiplier2.textContent = `Needs ${minimum1Points} Cookies`
+    automatize2.textContent = `Needs ${minimumAuto1Points} Cookies`
     pointsText.textContent = points
-    multInfoText.textContent = `Nivel ${multiplierLvl}`
-    automultInfoText.textContent = `Nivel ${autoMultiplierLvl}`
+    multInfoText.textContent = `Level ${multiplierLvl}`
+    automultInfoText.textContent = `Level ${autoMultiplierLvl}`
     removePopupMenu()
 })
 const exitBtn = document.getElementById("exit-btn")
