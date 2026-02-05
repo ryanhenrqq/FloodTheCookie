@@ -3,52 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="shortcut icon" href="../src/res/fav/favicon.png" type="image/x-icon">
+    <meta name="theme-color" content="#006b8b">
+    <link rel="shortcut icon" href="../src/res/fav/light-favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../src/styles/game.css">
     <title>Flood the Cookie!</title>
 </head>
 <body>
     <div class="content" id="body-blur">
-        <img src="../src/res/img/background.jpg" alt="Background" class="background-img">
+        <img src="../src/res/img/background.jpg" alt="Background" class="background-img" loading="lazy">
         <header class="main-header" style="display: none;" id="main-header-pause">
             <div class="left-head" id="logo-button">
-                <img src="../src/res/ico/pause.png" alt="Seta Para Trás" id="back-menu">
+                <img src="../src/res/ico/pause.png" alt="Seta Para Trás" id="back-menu" loading="lazy">
                 <h1>Flood the Cookie!</h1>
             </div>
             <div class="right-head" id="all-right-span">
-                <div class="bold-head" id="pointsSpan">0</div>
-                <img src="../src/res/ico/cookie.png" alt="Cookie Indicator" class="cookie-indicator">
+                <div class="bold-head" id="pointsSpan" >0</div>
+                <img src="../src/res/ico/cookie.png" alt="Cookie Indicator" class="cookie-indicator" loading="lazy">
             </div>
         </header>
         <header class="menu-header" id="menu-header-pause" style="display: flex;">
             <div class="left-head-menu" id="logo-button">
-                <button id="start-btn"  class="side-small-btn-menu-head"><img src="../src/res/ico/play.svg" alt="Play" class="side-small-btn">Start</button>
-                <button id="restart-btn"  class="side-small-btn-menu-head"><img src="../src/res/ico/restart.svg" alt="Restart" class="side-small-btn">Restart</button>
-                <button id="exit-btn" class="side-small-btn-menu-head"><img src="../src/res/ico/exit.svg" alt="" class="side-small-btn">Leave</button>
+                <button id="start-btn"  class="side-small-btn-menu-head"><img src="../src/res/ico/play.svg" alt="Play" class="side-small-btn" loading="lazy">Start</button>
+                <button id="restart-btn"  class="side-small-btn-menu-head"><img src="../src/res/ico/restart.svg" alt="Restart" class="side-small-btn" loading="lazy">Restart</button>
+                <button id="exit-btn" class="side-small-btn-menu-head"><img src="../src/res/ico/exit.svg" alt="" class="side-small-btn" loading="lazy">Leave</button>
             </div>
             <div class="right-head-menu" id="all-right-span">
                 <div class="bold-head-menu">
                     <b id="uptime">Playing for 0 seconds</b>
                     <b>GitHub: ryanhenrqq</b> 
                 </div>
-                <img src="../src/res/ico/cookie.png" alt="Cookie Indicator" class="cookie-indicator">
+                <img src="../src/res/ico/cookie.png" alt="Cookie Indicator" class="cookie-indicator" loading="lazy">
             </div>
         </header>
         <main id="main-content-blocking">
             <div class="infosplayer">
-                <img src="../src/res/ico/bakery.png" alt="Padaria" class="auxiliary-btn-icons">
+                <img src="../src/res/ico/bakery.png" alt="Padaria" class="auxiliary-btn-icons" loading="lazy">
                 <b id="username-custom-entry">'s bakery</b>
             </div>
             
             <div class="cookie-parent">
-                <img src="../src/res/fav/favicon.png" alt="Cookie" id="cookie" class="main-cookie" draggable="false">
+                <img src="../src/res/fav/favicon.png" alt="Cookie" id="cookie" class="main-cookie" draggable="false" loading="lazy">
             </div>
             
             <div class="aside-bar" id="aside-bar">
                 <div class="cont">
                     <h3 class="cont-titles">Boosters</h3>
                     <div class="flex-ver">
-                        <button id="mult1-btn0" onclick="multiplier1()" class="cont-buttons"><img src="../src/res/ico/hand-pointer.png" alt="Pointer" class="auxiliary-btn-icons"><b id="mult1-btn">ClickBooster</b></button>
+                        <button id="mult1-btn0" onclick="multiplier1()" class="cont-buttons"><img src="../src/res/ico/hand-pointer.png" alt="Pointer" class="auxiliary-btn-icons" loading="lazy"><b id="mult1-btn">ClickBooster</b></button>
                         <div id="price-mult1" class="infos">0 cookies</div>
                         <div class="infos" id="multiplier-info">Level 1</div>
                     </div>
@@ -56,7 +57,7 @@
                 <div class="industries-cont cont" id="industries-cont">
                     <h3 class="cont-titles">Factories</h3>
                     <div class="flex-ver">
-                        <button disabled id="auto1-btn0" onclick="automatize1()" class="cont-buttons"><img src="../src/res/ico/industry.png" alt="Pointer" class="auxiliary-btn-icons"><b id="auto1-btn">Production Line</b></button>
+                        <button disabled id="auto1-btn0" onclick="automatize1()" class="cont-buttons"><img src="../src/res/ico/industry.png" alt="Pointer" class="auxiliary-btn-icons" loading="lazy"><b id="auto1-btn">Production Line</b></button>
                         <div id="price-auto1" class="infos">0 cookies</div>
                         <div class="infos" id="auto-multiplier-info">Not Active</div>
                     </div>
@@ -87,18 +88,17 @@
         <b>GitHub: ryanhenrqq</b> 
     </div>-->
     <div class="welcomePopup" id="welcome-popup">
-        <img src="../src/res/ico/cookie.png" alt="Cookie Welcome">
+        <img src="../src/res/ico/cookie.png" alt="Cookie Welcome" loading="lazy">
         <b>Welcome to FloodTheCookie!</b>
         <p>Your goal here is to simply click the cookie, to get more cookies. The more you get, you will be more capable to buy the upgrades for your bakery.</p>
         <p>Enjoy it</p>
-        <button id="welcome-start-btn"><img src="../src/res/ico/play.svg" alt="Play"></button>
+        <button id="welcome-start-btn"><img src="../src/res/ico/play.svg" alt="Play" loading="lazy"></button>
     </div>
-    <div id="effectMouse"><img src="../src/res/fav/favicon.png" alt="Cookie Effect" draggable="false"></div>
-    <script src="../src/script/audio.js"></script>
-    <script src="../src/script/effects.js"></script>
+    <div id="effectMouse"><img src="../src/res/fav/favicon.png" alt="Cookie Effect" draggable="false" loading="lazy"></div>
+    <script src="../src/script/audio.js" defer></script>
+    <script src="../src/script/effects.js" defer></script>
     <script src="../src/script/ingame.js"></script>
     <script src="../src/script/automatizer.js"></script>
-    <script src="../src/script/audio.js"></script>
     <script src="../src/script/pause-menu.js"></script>
 </body>
 </html>

@@ -5,6 +5,9 @@
     padding: 0;
     font-family: "Montserrat", sans-serif;
 }
+html {
+    background-color: #006b8b;
+}
 
 body {
     display: flex;
