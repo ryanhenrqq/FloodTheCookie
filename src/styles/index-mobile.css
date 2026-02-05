@@ -1,0 +1,32 @@
+.cont {
+    left: 10%;
+    right: 10%;
+    width: 60%;
+}
+#alert-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 28px;
+}
+.cookie-parent {
+    width: 100px;
+    height: 100px;
+}
+.flex-hor {
+    flex-direction: column;
+}
+.flex-hor button {
+    font-size: 32px;
+    padding: 18px
+}
+@media (max-width: 560px) {
+    #alert-title {
+        font-size: 22px;
+    }
+    .cont {
+        left: 5%;
+        right: 5%;
+        width: 80%;
+    }
+}
